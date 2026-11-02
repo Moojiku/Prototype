@@ -38,12 +38,16 @@ button,input{font:inherit}
 .breadcrumb{font-size:11px;color:#888;margin:0 0 15px}
 .breadcrumb a{color:#777}
 .breadcrumb span{margin:0 6px;color:#bbb}
-.artist-tabs{display:flex;align-items:stretch;gap:0;overflow-x:auto;white-space:nowrap;background:#dedede;margin:0 0 18px;scrollbar-width:thin}
-.artist-tabs a{display:flex;align-items:center;justify-content:center;padding:12px 25px;color:#050505;font-size:clamp(17px,2.45vw,29px);font-weight:800;line-height:1.1;text-transform:uppercase;text-decoration:none;flex:0 0 auto}
+.artist-tabs{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));align-items:stretch;gap:0;overflow:visible;white-space:normal;background:#dedede;margin:0 0 18px;scrollbar-width:thin}
+.artist-tabs a{display:flex;align-items:center;justify-content:center;min-width:0;padding:10px 7px;color:#050505;font-size:16px;font-weight:800;line-height:1.15;letter-spacing:0;text-transform:uppercase;text-decoration:none;text-align:center;white-space:normal;overflow-wrap:anywhere}
 .artist-tabs a:nth-child(4){color:#aaa}
 .artist-tabs a.active{background:#0789cf;color:#050505}
 .artist-tabs a:hover{background:#cfcfcf;color:#050505;text-decoration:none}
 .artist-tabs a.active:hover{background:#0789cf}
+@media(max-width:700px){
+ .artist-tabs{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));overflow:visible;white-space:normal;width:100%}
+ .artist-tabs a{min-width:0;flex:none;padding:8px 2px;font-size:10px;line-height:1.15;letter-spacing:-.2px;text-align:center;white-space:normal;overflow-wrap:anywhere}
+}
 .video-song-section{padding:0 0 19px;border-bottom:1px solid #e6e6e6;margin:0 0 20px}
 .video-song-section h2{font-size:17px;margin-bottom:11px}
 .video-frame{position:relative;width:100%;padding-top:56.25%;background:#000;overflow:hidden}

@@ -38,6 +38,20 @@ button,input{font:inherit}
 .breadcrumb{font-size:11px;color:#888;margin:0 0 15px}
 .breadcrumb a{color:#777}
 .breadcrumb span{margin:0 6px;color:#bbb}
+.artist-tabs{display:flex;align-items:stretch;gap:0;overflow-x:auto;white-space:nowrap;background:#dedede;margin:0 0 18px;scrollbar-width:thin}
+.artist-tabs a{display:flex;align-items:center;justify-content:center;padding:12px 25px;color:#050505;font-size:clamp(17px,2.45vw,29px);font-weight:800;line-height:1.1;text-transform:uppercase;text-decoration:none;flex:0 0 auto}
+.artist-tabs a:nth-child(4){color:#aaa}
+.artist-tabs a.active{background:#0789cf;color:#050505}
+.artist-tabs a:hover{background:#cfcfcf;color:#050505;text-decoration:none}
+.artist-tabs a.active:hover{background:#0789cf}
+.video-song-section{padding:0 0 19px;border-bottom:1px solid #e6e6e6;margin:0 0 20px}
+.video-song-section h2{font-size:17px;margin-bottom:11px}
+.video-frame{position:relative;width:100%;padding-top:56.25%;background:#000;overflow:hidden}
+.video-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+@media(max-width:560px){
+ .artist-tabs{margin:0 -12px 16px}
+ .artist-tabs a{font-size:14px;padding:11px 14px}
+}
 .ad-slot{height:90px;max-width:970px;margin:0 auto 20px;background:#fafafa;border:1px solid #f0f0f0;display:flex;align-items:center;justify-content:center;color:#bbb;font-size:10px;letter-spacing:.6px}
 .search-row{display:flex;justify-content:flex-end;margin:0 0 16px}
 .search-row form{display:flex;width:330px;border:1px solid #cfcfcf;height:32px}
@@ -200,6 +214,15 @@ h3{font-size:15px;margin:0 0 10px}
 <main class="page-wrap">
   <div class="ad-slot">ADVERTISEMENT</div>
   <div class="breadcrumb"><a href="https://www.kapanlagi.com/">Home</a><span>›</span><a href="https://lirik.kapanlagi.com/">Lirik Lagu</a><span>›</span><a href="https://lirik.kapanlagi.com/dr/d/">D</a><span>›</span><a href="https://www.kapanlagi.com/denny-caknan/">Denny Caknan</a></div>
+  <nav class="artist-tabs" aria-label="Navigasi konten Denny Caknan">
+    <a href="#all">SEMUA</a>
+    <a href="#profile">PROFIL</a>
+    <a href="#berita">BERITA</a>
+    <a href="#foto-berita">FOTO</a>
+    <a href="#foto-berita">BERITA FOTO</a>
+    <a href="#video-artis">VIDEO</a>
+    <a href="#lirik" class="active" aria-current="page">LIRIK</a>
+  </nav>
   <div class="search-row">
     <form action="https://lirik.kapanlagi.com/" method="get">
       <input type="search" name="q" placeholder="Cari judul lagu atau nama artis di sini..." aria-label="Cari judul lagu atau nama artis di sini">
@@ -207,7 +230,7 @@ h3{font-size:15px;margin:0 0 10px}
     </form>
   </div>
 
-  <div class="columns">
+  <div class="columns" id="all">
     <article>
       <div class="article-head">
         <h1>Lirik Tepain Nyaman</h1>
@@ -228,9 +251,16 @@ h3{font-size:15px;margin:0 0 10px}
         <a href="#makna" aria-label="Baca makna lagu">Makna</a>
       </div>
 
-      <section class="lyrics-block" id="lirik">
+      <section class="video-song-section" id="video-song">
         <h2>Video Tepain Nyaman</h2>
-        <p class="video-credit">youtube.com/DC. PRODUCTION</p>
+        <div class="video-frame">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/84mcvgoFLrw?si=hTf_zomtiTvZVS2I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <p class="video-credit">Video YouTube · Denny Caknan</p>
+      </section>
+
+      <section class="lyrics-block" id="lirik">
+        <h2>Lirik Tepain Nyaman</h2>
         <p class="lyric-excerpt">Tersisa semacam penantian<br>Semakin tak terkendali</p>
         <div class="lyric-note">Cuplikan lirik untuk preview. Lirik lengkap tetap merujuk ke konten halaman existing.</div>
         <a class="read-more" href="https://lirik.kapanlagi.com/artis/denny-caknan/tepain-nyaman/" target="_blank" rel="noopener">Lihat lirik lengkap di halaman KapanLagi ↗</a>
@@ -261,7 +291,7 @@ h3{font-size:15px;margin:0 0 10px}
       </section>
 
       <section class="section-block">
-        <h2 class="section-title">Berita Artis Terbaru</h2>
+        <h2 class="section-title" id="berita">Berita Artis Terbaru</h2>
         <div class="news-list">
           <article class="news-item">
             <a class="news-thumb" href="https://www.kapanlagi.com/dangdut/denny-caknan-melangkah-ke-layar-lebar-jadi-mulyono-di-sukses-jaya-542a22903b.html"><img loading="lazy" src="https://cdns.klimg.com/kapanlagi.com/p/headline/denny-caknan-digeret-bayu-skak-4a1b29f1.jpg" alt="Denny Caknan Digandeng Bayu Skak ke Layar Lebar" onerror="this.onerror=null;this.src='https://cdns.klimg.com/kapanlagi.com/p/denny-caknan-digeret-bayu-skak-4a1b29f1.jpg'"></a>
@@ -295,7 +325,7 @@ h3{font-size:15px;margin:0 0 10px}
       </section>
 
       <section class="section-block">
-        <h2 class="section-title">Video Denny Caknan</h2>
+        <h2 class="section-title" id="video-artis">Video Denny Caknan</h2>
         <div class="video-list">
           <article class="video-item"><a class="thumb" href="https://video.kapanlagi.com/bella-bonita-istri-denny-caknan-jadi-tukang-parkir-dadakan-gara-gara-rumahnya-viral-dipakai-cod-c1b2a3.html"><img loading="lazy" src="https://cdns.klimg.com/kapanlagi.com/p/headline/bella-bonita-istri-denny-caknan-jadi-tu-c1b2a3.jpg" alt="Bella Bonita Jadi Tukang Parkir Dadakan" onerror="this.onerror=null;this.src='https://cdns.klimg.com/kapanlagi.com/p/bella-bonita-istri-denny-caknan-jadi-tu-c1b2a3.jpg'"></a><a href="https://video.kapanlagi.com/bella-bonita-istri-denny-caknan-jadi-tukang-parkir-dadakan-gara-gara-rumahnya-viral-dipakai-cod-c1b2a3.html">Bella Bonita Istri Denny Caknan Jadi Tukang Parkir Dadakan Gara-Gara Rumahnya Viral Dipakai COD</a><small>05 Januari 2026 17:41</small></article>
           <article class="video-item"><a class="thumb" href="https://video.kapanlagi.com/viral-rumah-denny-caknan-dijadikan-pusat-cod-ada-yang-minta-wifi-hingga-review-nyaman-di-google-173781.html"><img loading="lazy" src="https://cdns.klimg.com/kapanlagi.com/p/headline/viral-rumah-denny-caknan-dijadikan-pusa-173781.jpg" alt="Rumah Denny Caknan Dijadikan Pusat COD" onerror="this.onerror=null;this.src='https://cdns.klimg.com/kapanlagi.com/p/viral-rumah-denny-caknan-dijadikan-pusa-173781.jpg'"></a><a href="https://video.kapanlagi.com/viral-rumah-denny-caknan-dijadikan-pusat-cod-ada-yang-minta-wifi-hingga-review-nyaman-di-google-173781.html">Viral Rumah Denny Caknan Dijadikan Pusat COD: Ada yang Minta Wifi Hingga Review Nyaman di Google</a><small>19 Desember 2025 14:45</small></article>
@@ -320,7 +350,7 @@ h3{font-size:15px;margin:0 0 10px}
 
     <aside class="side-column">
       <section class="side-section">
-        <h2 class="side-title">Profil Artis</h2>
+        <h2 class="side-title" id="profile">Profil Artis</h2>
         <div class="artist-card">
           <img src="https://cdns.klimg.com/kapanlagi.com/p/ddeeennnnnnyyyyz.jpg" alt="Foto profil Denny Caknan">
           <strong>Denny Caknan</strong>
@@ -354,7 +384,7 @@ h3{font-size:15px;margin:0 0 10px}
         <div class="side-note">Tahun rilis dan pencipta mengacu pada profil artis dan deskripsi video resmi. Album, durasi, ISRC, serta ID lagu belum terlihat pada sumber publik yang diperiksa.</div>
       </section>
       <section class="side-section">
-        <h2 class="side-title">Foto &amp; Berita Foto</h2>
+        <h2 class="side-title" id="foto-berita">Foto &amp; Berita Foto</h2>
         <div class="photo-integration">Koleksi foto dan berita foto Denny Caknan tersedia melalui halaman artis KapanLagi. <br><br><a href="https://www.kapanlagi.com/denny-caknan/" target="_blank" rel="noopener">Lihat konten Foto &amp; Berita Foto ↗</a><br><br><span style="color:#999">Modul ini merupakan usulan integrasi lintas produk pada Song Leaf.</span></div>
       </section>
     </aside>

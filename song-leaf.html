@@ -149,6 +149,26 @@ h3{font-size:15px;margin:0 0 10px}
  .side-column{display:grid;grid-template-columns:1fr 1fr;gap:18px}
  .artist-card img{height:160px}
 }
+@media(max-width:700px){
+ .artist-tabs{
+   display:grid;
+   grid-template-columns:repeat(7,minmax(0,1fr));
+   overflow:visible;
+   white-space:normal;
+   width:100%;
+ }
+ .artist-tabs a{
+   min-width:0;
+   flex:none;
+   padding:10px 2px;
+   font-size:clamp(8px,1.8vw,12px);
+   line-height:1.15;
+   letter-spacing:-.25px;
+   text-align:center;
+   white-space:normal;
+   overflow-wrap:normal;
+ }
+}
 @media(max-width:560px){
  .site-top .inner{padding:0 12px}
  .site-top .right{display:none}

@@ -3,250 +3,376 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Lirik Tepain Nyaman – Denny Caknan | Prototype Music Entity</title>
-<meta name="description" content="Prototype revisi Song Leaf Tepain Nyaman - Denny Caknan berdasarkan halaman existing KapanLagi Lirik.">
+<title>Lirik Tepain Nyaman - Denny Caknan | KapanLagi Lirik</title>
+<meta name="description" content="Lirik Tepain Nyaman - Denny Caknan. Makna lagu, lirik lain, berita artis, dan konten terkait.">
 <style>
-:root{--red:#e21e2b;--ink:#20232a;--muted:#6b7280;--line:#e6e8ec;--soft:#f6f7f9;--pink:#fff1f2;--green:#16794a;--greenbg:#eaf7ef;--amber:#9a5b00;--amberbg:#fff5df;--blue:#2456a6;--bluebg:#edf4ff;--shadow:0 10px 28px rgba(20,25,35,.07)}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#fff;color:var(--ink);font:15px/1.55 Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
-a{color:inherit;text-decoration:none}a:hover{color:var(--red)}button{font:inherit;cursor:pointer}
-.wrap{max-width:1180px;margin:auto;padding:0 22px}
-.topnote{background:#191b20;color:#fff;font-size:11px;letter-spacing:.08em;text-transform:uppercase;padding:9px 0}
-.topnote .wrap{display:flex;justify-content:space-between;gap:12px;align-items:center}
-.topnote strong{color:#ffb5ba}
-header{border-bottom:1px solid var(--line);background:#fff}
-.head{height:70px;display:flex;align-items:center;justify-content:space-between;gap:24px}
-.logo{font-size:27px;font-weight:900;letter-spacing:-1.7px;color:var(--red)}
-.logo span{color:var(--ink)}
-.nav{display:flex;gap:22px;color:#515762;font-size:13px;font-weight:750}
-.nav a.active{color:var(--red)}
-.head-actions{display:flex;gap:9px;align-items:center}
-.search{border:1px solid var(--line);background:#fff;border-radius:999px;padding:9px 14px;color:var(--muted);font-size:12px}
-main{padding:24px 0 70px}
-.breadcrumb{font-size:12px;color:var(--muted);margin:4px 0 20px}
-.breadcrumb a{color:#515762}
-.layout{display:grid;grid-template-columns:minmax(0,1fr) 310px;gap:28px;align-items:start}
-main h1{font-size:34px;line-height:1.12;letter-spacing:-1.2px;margin:0 0 8px}
-.kicker{font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:850;color:var(--red);margin-bottom:9px}
-.byline{display:flex;align-items:center;gap:9px;flex-wrap:wrap;color:var(--muted);font-size:13px}
-.byline a{font-weight:800;color:var(--ink)}
-.tagrow{display:flex;gap:7px;flex-wrap:wrap;margin:16px 0}
-.tag{border:1px solid var(--line);background:#fafafa;border-radius:999px;padding:5px 10px;font-size:11px;color:#555d69}
-.tag.red{background:var(--pink);border-color:#ffd6da;color:#bd1824}
-.share{display:flex;gap:8px;align-items:center;margin:16px 0 22px;color:var(--muted);font-size:12px}
-.share a,.share button{border:1px solid var(--line);border-radius:999px;padding:7px 11px;background:#fff;color:#4b5563;font-size:11px}
-.card{border:1px solid var(--line);border-radius:15px;background:#fff;box-shadow:var(--shadow);overflow:hidden}
-.player{padding:16px;background:#17191e;color:#fff;border-radius:15px;display:grid;grid-template-columns:1fr 118px;gap:15px;align-items:center}
-.player small{color:#ffb7bd;font-size:10px;font-weight:850;letter-spacing:.12em;text-transform:uppercase}
-.player h2{font-size:19px;line-height:1.2;margin:5px 0}
-.player p{font-size:12px;color:#c7cbd2;margin:0}
-.play-art{height:96px;border-radius:10px;overflow:hidden;background:#333;position:relative}
-.play-art img{width:100%;height:100%;object-fit:cover;opacity:.86}
-.play-art:after{content:"▶";position:absolute;inset:0;display:grid;place-items:center;color:white;font-size:30px;text-shadow:0 2px 8px #000}
-.section{margin-top:28px}
-.section-head{display:flex;justify-content:space-between;align-items:end;gap:14px;margin-bottom:13px}
-.section h2{font-size:21px;letter-spacing:-.5px;margin:0}
-.section-head p{font-size:12px;color:var(--muted);margin:4px 0 0}
-.status{display:inline-flex;align-items:center;gap:5px;border-radius:999px;padding:5px 9px;font-size:10px;font-weight:850;letter-spacing:.04em;text-transform:uppercase;white-space:nowrap}
-.status.ok{background:var(--greenbg);color:var(--green)}
-.status.missing{background:#fff0f0;color:#bd2028;border:1px solid #ffd5d8}
-.status.check{background:var(--amberbg);color:var(--amber)}
-.status.proposed{background:var(--bluebg);color:var(--blue)}
-.lyrics{padding:22px 24px;background:#fffdfd;border:1px solid #f0dfe1;border-radius:14px}
-.lyrics .excerpt{font-family:Georgia,serif;font-size:20px;line-height:1.8;color:#3a3031}
-.lyrics .smallnote{font-size:11px;color:var(--muted);margin-top:12px}
-.btn{display:inline-flex;align-items:center;gap:7px;border-radius:999px;padding:9px 14px;background:var(--red);color:#fff;font-size:12px;font-weight:800;border:0}
-.btn:hover{color:#fff;background:#bd1622}
-.btn.ghost{background:#fff;color:var(--ink);border:1px solid var(--line)}
-.btn.ghost:hover{color:var(--red);border-color:#f2aeb4}
-.meaning{padding:19px 20px;border:1px solid var(--line);border-radius:14px}
-.meaning p{margin:0 0 10px;color:#4c525d;font-size:14px}
-.video{border-radius:14px;overflow:hidden;background:#101114}
-.video iframe{display:block;width:100%;aspect-ratio:16/9;border:0}
-.video-meta{padding:13px 15px;background:#f8f8f9}
-.video-meta strong{display:block;font-size:13px}
-.video-meta span{font-size:11px;color:var(--muted)}
-.altvideo{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 14px;margin-top:9px;border:1px solid var(--line);border-radius:12px;font-size:12px}
-.songlist{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
-.song{display:flex;align-items:center;gap:11px;padding:12px;border:1px solid var(--line);border-radius:12px;background:#fff}
-.song .num{width:34px;height:34px;display:grid;place-items:center;background:var(--pink);color:var(--red);font-size:11px;font-weight:900;border-radius:9px}
-.song strong{display:block;font-size:12px}
-.song small{color:var(--muted);font-size:10px}
-.song .arrow{margin-left:auto;color:var(--red);font-weight:900}
-.editorial{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
-.ed-card{border:1px solid var(--line);border-radius:13px;overflow:hidden}
-.ed-thumb{height:118px;background:linear-gradient(135deg,#eceef2,#f9e8e9);display:grid;place-items:center;color:#777f8d;font-size:11px;font-weight:800;text-align:center;padding:10px;position:relative}
-.ed-thumb img{width:100%;height:100%;object-fit:cover}
-.ed-body{padding:12px}
-.ed-body small{font-size:10px;color:var(--muted)}
-.ed-body strong{display:block;font-size:12px;line-height:1.4;margin:5px 0 9px}
-.ed-body a{font-size:11px;color:var(--red);font-weight:800}
-.missingbox{padding:13px;border:1px dashed #e6a4a8;border-radius:12px;background:#fff8f8;color:#713a3d;font-size:12px}
-.missingbox strong{display:block;color:#a21d26;margin-bottom:4px}
-aside .artist-card{border:1px solid var(--line);border-radius:15px;overflow:hidden;box-shadow:var(--shadow)}
-.artist-cover{height:170px;background:#29252a;position:relative}
-.artist-cover img{width:100%;height:100%;object-fit:cover;object-position:center 28%}
-.artist-info{padding:15px}
-.artist-info h2{font-size:20px;margin:0 0 2px}
-.artist-info p{font-size:12px;color:var(--muted);margin:0 0 13px}
-.artist-actions{display:flex;flex-direction:column;gap:8px}
-.artist-actions a{text-align:center}
-.sidebox{border:1px solid var(--line);border-radius:14px;padding:15px;margin-top:14px}
-.sidebox h3{font-size:14px;margin:0 0 11px}
-.meta-row{display:flex;justify-content:space-between;gap:10px;border-top:1px solid var(--line);padding:9px 0;font-size:11px}
-.meta-row span:first-child{color:var(--muted)}
-.meta-row strong{text-align:right}
-.entity-note{margin-top:14px;padding:14px;background:var(--bluebg);border:1px solid #d9e6ff;border-radius:13px;font-size:11px;color:#294a7d}
-.entity-note strong{display:block;margin-bottom:4px}
-.legend{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 20px}
-footer{border-top:1px solid var(--line);background:#fafafa;padding:25px 0;color:var(--muted);font-size:11px}
-footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
-@media(max-width:850px){.layout{grid-template-columns:1fr}.nav{display:none}aside{display:grid;grid-template-columns:1fr 1fr;gap:12px}aside .sidebox{margin:0}.artist-card{grid-row:span 2}}
-@media(max-width:560px){.wrap{padding:0 15px}.head{height:60px}.logo{font-size:23px}.head-actions .search{display:none}main h1{font-size:29px}.player{grid-template-columns:1fr 88px}.play-art{height:80px}.songlist,.editorial{grid-template-columns:1fr}aside{display:block}aside .sidebox{margin-top:12px}.section-head{align-items:start;flex-direction:column}.share{flex-wrap:wrap}}
+:root{--red:#ed1c35;--red-dark:#c8102e;--ink:#252525;--muted:#777;--line:#dedede;--soft:#f5f5f5;--link:#d71935}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#fff;color:var(--ink);font:13px/1.55 Arial,Helvetica,sans-serif}
+a{color:var(--link);text-decoration:none}
+a:hover{text-decoration:underline;color:var(--red-dark)}
+img{max-width:100%;display:block}
+button,input{font:inherit}
+.site-top{background:#222;color:#fff;height:31px;font-size:11px}
+.site-top .inner{max-width:1120px;height:100%;margin:auto;padding:0 16px;display:flex;align-items:center;justify-content:space-between}
+.site-top a{color:#fff;margin-right:13px}
+.site-header{background:#fff;border-bottom:1px solid #d6d6d6}
+.header-inner{max-width:1120px;margin:auto;padding:13px 16px 0}
+.header-main{display:flex;align-items:center;gap:24px;min-height:52px}
+.menu-btn{border:0;background:#292929;color:#fff;padding:8px 12px;font-size:11px;font-weight:bold;letter-spacing:.4px}
+.brand{display:flex;align-items:center;min-width:155px;height:42px}
+.brand img{max-width:155px;max-height:42px;object-fit:contain}
+.brand-fallback{display:none;color:#ec1b34;font-size:28px;font-weight:900;letter-spacing:-1.8px}
+.header-search{margin-left:auto;display:flex;align-items:center;width:min(360px,45vw);height:34px;border:1px solid #ccc;background:#fff}
+.header-search input{border:0;outline:0;min-width:0;flex:1;padding:7px 10px;font-size:12px}
+.header-search button{height:32px;border:0;background:#333;color:#fff;padding:0 13px;font-size:11px;font-weight:bold}
+.main-nav{display:flex;align-items:center;gap:0;overflow-x:auto;white-space:nowrap;margin-top:11px;border-top:1px solid #eee}
+.main-nav a{display:block;padding:11px 12px 10px;color:#333;font-size:11px;font-weight:bold;text-transform:uppercase}
+.main-nav a.active{color:var(--red);border-bottom:3px solid var(--red);padding-bottom:7px}
+.trending-strip{border-bottom:1px solid #e6e6e6;background:#fafafa}
+.trending-strip .inner{max-width:1120px;margin:auto;padding:7px 16px;display:flex;gap:10px;align-items:center;overflow:hidden;white-space:nowrap;font-size:11px}
+.trending-strip strong{color:var(--red);text-transform:uppercase}
+.trending-strip a{color:#555}
+.page-wrap{max-width:1120px;margin:0 auto;padding:18px 16px 50px}
+.breadcrumb{font-size:11px;color:#888;margin:0 0 15px}
+.breadcrumb a{color:#777}
+.breadcrumb span{margin:0 6px;color:#bbb}
+.ad-slot{height:90px;max-width:970px;margin:0 auto 20px;background:#fafafa;border:1px solid #f0f0f0;display:flex;align-items:center;justify-content:center;color:#bbb;font-size:10px;letter-spacing:.6px}
+.search-row{display:flex;justify-content:flex-end;margin:0 0 16px}
+.search-row form{display:flex;width:330px;border:1px solid #cfcfcf;height:32px}
+.search-row input{border:0;outline:0;flex:1;min-width:0;padding:6px 9px;font-size:11px}
+.search-row button{border:0;background:#333;color:#fff;padding:0 14px;font-size:10px;font-weight:bold;text-transform:uppercase}
+.columns{display:grid;grid-template-columns:minmax(0,730px) minmax(230px,300px);gap:36px;align-items:start}
+h1{font-size:25px;line-height:1.25;margin:0 0 8px;font-weight:700;color:#242424}
+h2{font-size:18px;line-height:1.3;margin:0 0 12px;color:#282828}
+h3{font-size:15px;margin:0 0 10px}
+.article-head{border-bottom:1px solid #e5e5e5;padding-bottom:13px;margin-bottom:15px}
+.artist-byline{font-size:12px;color:#777}
+.artist-byline a{font-weight:bold}
+.entity-inline{display:inline-flex;gap:8px;align-items:center;margin-left:8px;font-size:10px}
+.entity-inline a{border:1px solid #e4e4e4;padding:3px 7px;border-radius:2px;color:#555}
+.entity-inline a:hover{border-color:#e8a0aa;color:var(--red);text-decoration:none}
+.share-row{display:flex;align-items:center;gap:7px;margin:14px 0 20px;color:#888;font-size:11px}
+.share-row a{width:27px;height:27px;border-radius:50%;display:grid;place-items:center;background:#f1f1f1;color:#555;font-weight:bold;font-size:10px}
+.share-row a:hover{background:var(--red);color:#fff;text-decoration:none}
+.article-label{font-size:11px;color:#777;margin:0 0 8px}
+.article-label a{color:var(--red);font-weight:bold}
+.lyrics-block{padding:4px 0 19px;border-bottom:1px solid #e6e6e6;margin-bottom:20px}
+.lyrics-block h2{font-size:17px;margin-bottom:10px}
+.video-credit{font-size:11px;color:#777;margin:0 0 14px}
+.lyric-excerpt{font-size:14px;line-height:1.9;color:#333;padding-left:14px;border-left:3px solid #eee;margin:0 0 9px}
+.lyric-note{font-size:10px;color:#999;margin-top:7px}
+.read-more{font-size:11px;font-weight:bold}
+.meaning-section{padding:0 0 18px;border-bottom:1px solid #e6e6e6;margin-bottom:19px}
+.meaning-section p{font-size:13px;line-height:1.8;color:#444;margin:0 0 12px}
+.tag-list{display:flex;gap:7px;flex-wrap:wrap;margin:13px 0 20px}
+.tag-list a{background:#f5f5f5;border:1px solid #e6e6e6;padding:4px 8px;font-size:10px;color:#666}
+.tag-list a:hover{background:#fff0f2;border-color:#f3c4ca;text-decoration:none;color:var(--red)}
+.section-block{margin:22px 0 27px}
+.section-title{font-size:17px;padding-bottom:8px;border-bottom:2px solid #333;margin:0 0 13px}
+.section-title small{font-size:10px;color:#999;font-weight:normal;margin-left:5px}
+.song-links{display:grid;grid-template-columns:1fr 1fr;gap:0 22px}
+.song-links a{display:block;padding:8px 2px;border-bottom:1px solid #eee;color:#555;font-size:12px}
+.song-links a:before{content:"›";color:var(--red);font-weight:bold;margin-right:8px}
+.song-links a:hover{color:var(--red)}
+.more-link{display:block;text-align:right;font-size:11px;font-weight:bold;margin-top:10px}
+.news-list{display:flex;flex-direction:column;gap:14px}
+.news-item{display:grid;grid-template-columns:126px minmax(0,1fr);gap:13px;padding-bottom:13px;border-bottom:1px solid #eee}
+.news-item:last-child{border-bottom:0}
+.news-thumb{width:126px;height:82px;overflow:hidden;background:#f0f0f0}
+.news-thumb img{width:100%;height:100%;object-fit:cover}
+.news-meta{font-size:10px;color:#999;margin:1px 0 5px}
+.news-title{font-size:13px;line-height:1.45;font-weight:bold;color:#333}
+.news-title a{color:#333}
+.news-title a:hover{color:var(--red)}
+.news-kind{font-size:9px;text-transform:uppercase;color:var(--red);font-weight:bold;letter-spacing:.4px;margin-top:5px}
+.video-list{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.video-item .thumb{height:96px;background:#f0f0f0;overflow:hidden;position:relative}
+.video-item .thumb img{width:100%;height:100%;object-fit:cover}
+.video-item .thumb:after{content:"▶";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:30px;height:30px;border-radius:50%;background:rgba(0,0,0,.68);color:white;display:grid;place-items:center;font-size:11px}
+.video-item a{display:block;color:#333;font-size:11px;font-weight:bold;line-height:1.4;margin-top:7px}
+.video-item small{display:block;color:#999;font-size:9px;margin-top:4px}
+.entity-panel{border-top:1px solid #e6e6e6;border-bottom:1px solid #e6e6e6;padding:14px 0;margin:24px 0}
+.entity-panel-head{font-size:15px;font-weight:bold;margin-bottom:10px}
+.entity-person{display:flex;align-items:center;gap:12px}
+.entity-person img{width:58px;height:58px;object-fit:cover;border-radius:50%;border:1px solid #eee}
+.entity-person strong{display:block;font-size:13px}
+.entity-person small{display:block;color:#888;font-size:10px;margin-top:4px}
+.entity-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:11px}
+.entity-actions a{border:1px solid #ddd;padding:6px 9px;color:#555;font-size:10px}
+.entity-actions a:hover{border-color:#e8a0aa;color:var(--red);text-decoration:none}
+.entity-status{font-size:10px;color:#9a5b00;background:#fff8e9;border-left:3px solid #e5b85b;padding:8px 10px;margin-top:12px;line-height:1.55}
+.side-section{margin:0 0 24px}
+.side-title{font-size:15px;border-bottom:2px solid #333;padding-bottom:8px;margin:0 0 12px}
+.artist-card{border:1px solid #e5e5e5;padding:12px}
+.artist-card img{width:100%;height:190px;object-fit:cover;object-position:center 25%;margin-bottom:10px}
+.artist-card strong{font-size:14px}
+.artist-card p{font-size:11px;color:#777;line-height:1.6;margin:5px 0 10px}
+.artist-card .profile-link{font-size:11px;font-weight:bold}
+.side-song-list a{display:block;padding:8px 0;border-bottom:1px solid #eee;color:#555;font-size:11px}
+.side-song-list a:before{content:"♪";color:var(--red);margin-right:7px}
+.side-song-list a:hover{color:var(--red)}
+.side-note{font-size:10px;line-height:1.6;color:#888;background:#fafafa;padding:10px;border:1px solid #eee}
+.meta-table{width:100%;border-collapse:collapse;font-size:11px}
+.meta-table td{padding:7px 4px;border-bottom:1px solid #eee;vertical-align:top}
+.meta-table td:first-child{color:#888;width:42%}
+.meta-table td:last-child{color:#444;font-weight:bold}
+.missing{color:#a66a00!important;font-weight:normal!important}
+.photo-integration{border:1px solid #e5e5e5;padding:12px;font-size:11px;line-height:1.6;color:#666}
+.photo-integration a{font-weight:bold}
+.site-footer{background:#242424;color:#ddd;margin-top:35px;padding:26px 0 18px}
+.site-footer .inner{max-width:1120px;margin:auto;padding:0 16px}
+.footer-logo{font-size:22px;font-weight:900;color:#fff;letter-spacing:-1px;margin-bottom:12px}
+.footer-links{display:flex;flex-wrap:wrap;gap:9px 16px;margin:12px 0 17px}
+.footer-links a{font-size:10px;color:#ddd}
+.footer-social{font-size:10px;color:#aaa;border-top:1px solid #444;padding-top:13px}
+.footer-copy{font-size:10px;color:#999;margin-top:10px}
+@media(max-width:820px){
+ .columns{grid-template-columns:1fr;gap:25px}
+ .side-column{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+ .artist-card img{height:160px}
+}
+@media(max-width:560px){
+ .site-top .inner{padding:0 12px}
+ .site-top .right{display:none}
+ .header-inner{padding:10px 12px 0}
+ .header-main{gap:10px}
+ .brand{min-width:110px}
+ .brand img{max-width:112px}
+ .header-search{width:auto;flex:1}
+ .header-search button{padding:0 8px}
+ .main-nav a{padding:10px 9px;font-size:10px}
+ .trending-strip .inner{padding:7px 12px}
+ .page-wrap{padding:14px 12px 35px}
+ .ad-slot{height:65px}
+ h1{font-size:22px}
+ .columns{display:block}
+ .side-column{display:block}
+ .song-links{grid-template-columns:1fr}
+ .news-item{grid-template-columns:98px minmax(0,1fr);gap:10px}
+ .news-thumb{width:98px;height:70px}
+ .video-list{grid-template-columns:1fr 1fr}
+ .video-item .thumb{height:88px}
+ .entity-person img{width:50px;height:50px}
+}
 </style>
 </head>
 <body>
-<div class="topnote"><div class="wrap"><span>Prototype konsep · Song Leaf enhancement</span><strong>Existing content + Music Entity proposal</strong></div></div>
-<header><div class="wrap head">
-  <a class="logo" href="https://lirik.kapanlagi.com/">kapanlagi<span>lirik</span></a>
-  <nav class="nav"><a href="https://www.kapanlagi.com/">HOME</a><a href="https://www.kapanlagi.com/showbiz/selebriti/">ARTIS</a><a href="https://musik.kapanlagi.com/">MUSIK</a><a href="https://lirik.kapanlagi.com/" class="active">LIRIK</a><a href="https://www.kapanlagi.com/foto/">FOTO</a><a href="https://video.kapanlagi.com/">VIDEO</a></nav>
-  <div class="head-actions"><span class="search">⌕ Cari lagu atau artis</span><a class="btn ghost" href="https://lirik.kapanlagi.com/artis/denny-caknan/">Artist Hub ↗</a></div>
-</div></header>
-<main class="wrap">
-  <div class="breadcrumb"><a href="https://www.kapanlagi.com/">Home</a> › <a href="https://lirik.kapanlagi.com/">Lirik Lagu</a> › <a href="https://lirik.kapanlagi.com/dr/d/">D</a> › <a href="https://lirik.kapanlagi.com/artis/denny-caknan/">Denny Caknan</a> › Tepain Nyaman</div>
-  <div class="legend">
-    <span class="status ok">● Ada di existing</span>
-    <span class="status proposed">＋ Enhancement prototype</span>
-    <span class="status missing">! Belum ada / perlu data</span>
-    <span class="status check">? Perlu validasi</span>
+<div class="site-top">
+  <div class="inner">
+    <div><a href="https://www.kapanlagi.com/">KapanLagi.com</a><a href="https://www.liputan6.com/">Liputan6.com</a><a href="https://www.bola.com/">Bola.com</a></div>
+    <div class="right">KLY KapanLagi Youniverse</div>
   </div>
-  <div class="layout">
-    <div>
-      <div class="kicker">KapanLagi Lirik · Song Leaf</div>
-      <h1>Lirik Tepain Nyaman</h1>
-      <div class="byline">Dinyanyikan oleh <a href="https://lirik.kapanlagi.com/artis/denny-caknan/">Denny Caknan</a> <span>·</span> Halaman lagu <span class="status ok">Existing</span></div>
-      <div class="tagrow">
-        <span class="tag red">Lagu Dangdut</span><span class="tag">Lagu Indonesia</span>
-        <span class="status check">Judul entity perlu validasi</span>
-      </div>
-      <div class="missingbox" style="margin-bottom:17px">
-        <strong>Catatan normalisasi judul</strong>
-        Halaman existing menggunakan “Tepain Nyaman”, sedangkan bagian makna, profil artis, dan video resmi menggunakan “Tepian Nyaman”. Prototype mempertahankan judul existing; nama kanonis perlu dikonfirmasi ke Editorial/CMS sebelum mapping entity.
-      </div>
-      <div class="share"><span>Bagikan:</span>
-        <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Flirik.kapanlagi.com%2Fartis%2Fdenny-caknan%2Ftepain-nyaman%2F" target="_blank" rel="noopener">Facebook</a>
-        <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Flirik.kapanlagi.com%2Fartis%2Fdenny-caknan%2Ftepain-nyaman%2F&text=Lirik%20Tepain%20Nyaman%20dari%20Denny%20Caknan" target="_blank" rel="noopener">X</a>
-        <a href="https://wa.me/?text=Lirik%20Tepain%20Nyaman%20Denny%20Caknan%20https%3A%2F%2Flirik.kapanlagi.com%2Fartis%2Fdenny-caknan%2Ftepain-nyaman%2F" target="_blank" rel="noopener">WhatsApp</a>
-      </div>
-
-      <div class="player">
-        <div><small>Song identity · Existing page</small><h2>Tepain Nyaman</h2><p>Denny Caknan · Karya Denny Caknan (kredit dari deskripsi video resmi; perlu sinkronisasi CMS)</p></div>
-        <div class="play-art"><img src="https://img.youtube.com/vi/84mcvgoFLrw/hqdefault.jpg" alt="Thumbnail video Tepian Nyaman versi live"></div>
-      </div>
-
-      <section class="section">
-        <div class="section-head"><div><h2>Lirik Lagu</h2><p>Konten lirik tetap menggunakan sumber CMS existing.</p></div><span class="status ok">Ada di existing</span></div>
-        <div class="lyrics">
-          <div class="excerpt">Tersisa semacam penantian<br>Semakin tak terkendali</div>
-          <div class="smallnote">Cuplikan singkat untuk preview. Lirik lengkap tetap dibaca dari halaman existing/CMS dan tidak disalin ke prototype ini.</div>
-          <div style="margin-top:14px"><a class="btn" href="https://lirik.kapanlagi.com/artis/denny-caknan/tepain-nyaman/" target="_blank" rel="noopener">Baca lirik lengkap di halaman existing ↗</a></div>
-        </div>
-      </section>
-
-      <section class="section">
-        <div class="section-head"><div><h2>Makna Lagu Tepian Nyaman</h2><p>Ringkasan berdasarkan konten makna yang sudah tersedia.</p></div><span class="status ok">Ada di existing</span></div>
-        <div class="meaning">
-          <p>Lagu ini bercerita tentang kerinduan kepada teman lama yang telah pergi merantau. Tokoh dalam lagu mengenang tempat berkumpul dan bercanda yang dulu terasa akrab, tetapi kini kehilangan suasana karena sahabatnya tidak lagi hadir.</p>
-          <p>Inti ceritanya adalah persahabatan, nostalgia, dan keinginan untuk kembali bertemu. Nuansanya hangat sekaligus sendu karena waktu dan kebersamaan yang telah lewat tidak bisa diulang.</p>
-          <small style="color:var(--muted)">Ringkasan diparafrasekan dari bagian “Makna Lagu” di halaman existing.</small>
-        </div>
-      </section>
-
-      <section class="section">
-        <div class="section-head"><div><h2>Video Tepian Nyaman</h2><p>Video resmi yang ditemukan untuk lagu ini.</p></div><span class="status check">Perlu konfirmasi primary video</span></div>
-        <div class="video">
-          <iframe src="https://www.youtube.com/embed/84mcvgoFLrw?rel=0" title="Denny Caknan - Tepian Nyaman (Official Live Music) - DC MUSIK" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </div>
-        <div class="video-meta"><strong>DENNY CAKNAN – TEPIAN NYAMAN (OFFICIAL LIVE MUSIC) | DC MUSIK</strong><span>DC. PRODUCTION · 8 April 2024 · Kandidat video utama karena halaman existing menyebut kanal DC. PRODUCTION.</span></div>
-        <div class="altvideo"><div><strong>Versi Official Music Video (2018)</strong><br><span style="color:var(--muted)">Kanal resmi Denny Caknan · 10 Juni 2018</span></div><a class="btn ghost" href="https://www.youtube.com/watch?v=ODYkwrMd_wU" target="_blank" rel="noopener">Tonton ↗</a></div>
-        <div class="missingbox" style="margin-top:10px"><strong>Perlu validasi</strong>Halaman existing hanya menampilkan teks “youtube.com/DC. PRODUCTION”; video ID/embed yang terpasang di halaman tidak terbaca dari konten yang diekstrak. Video 2024 di atas adalah kandidat yang cocok dengan kanal tersebut, bukan konfirmasi bahwa itulah embed yang sedang live.</div>
-      </section>
-
-      <section class="section">
-        <div class="section-head"><div><h2>Lagu Lain dari Denny Caknan</h2><p>Daftar lagu terkait yang sudah ditampilkan di halaman existing.</p></div><span class="status ok">Ada di existing</span></div>
-        <div class="songlist">
-          <a class="song" href="https://lirik.kapanlagi.com/artis/denny-caknan/laut-kidul-ft-hendra-kumbara/"><span class="num">01</span><span><strong>Laut Kidul (ft. Hendra Kumbara)</strong><small>Song Leaf existing</small></span><span class="arrow">↗</span></a>
-          <a class="song" href="https://lirik.kapanlagi.com/artis/denny-caknan/negoro-angin/"><span class="num">02</span><span><strong>Negoro Angin</strong><small>Song Leaf existing</small></span><span class="arrow">↗</span></a>
-          <a class="song" href="https://lirik.kapanlagi.com/artis/denny-caknan/mblebes-ft-yeni-inka/"><span class="num">03</span><span><strong>Mblebes (ft. Yeni Inka)</strong><small>Song Leaf existing</small></span><span class="arrow">↗</span></a>
-          <a class="song" href="https://lirik.kapanlagi.com/artis/denny-caknan/titenono/"><span class="num">04</span><span><strong>Titenono</strong><small>Song Leaf existing</small></span><span class="arrow">↗</span></a>
-          <a class="song" href="https://lirik.kapanlagi.com/artis/denny-caknan/sinarengan/"><span class="num">05</span><span><strong>Sinarengan</strong><small>Song Leaf existing</small></span><span class="arrow">↗</span></a>
-        </div>
-        <div class="missingbox" style="margin-top:11px"><strong>Enhancement yang diusulkan</strong>Relasi daftar lagu sebaiknya berasal dari Artist ID yang tervalidasi, bukan sekadar kesamaan teks nama artis. Song ID dan foreign key belum ditampilkan di halaman.</div>
-      </section>
-
-      <section class="section">
-        <div class="section-head"><div><h2>Berita Artis Terkait</h2><p>Modul ini memang sudah tersedia pada halaman Song Leaf existing.</p></div><span class="status ok">Ada di existing</span></div>
-        <div class="editorial">
-          <article class="ed-card"><div class="ed-thumb"><span>THUMBNAIL ARTIKEL<br><b>Perlu tarik asset CMS</b></span></div><div class="ed-body"><small>25 September 2026 · BERITA</small><strong>Denny Caknan Digandeng Bayu Skak ke Layar Lebar, Jadi Mulyono di Film Sukses Jaya</strong><a href="https://www.kapanlagi.com/dangdut/denny-caknan-melangkah-ke-layar-lebar-jadi-mulyono-di-sukses-jaya-542a22903b.html" target="_blank" rel="noopener">Buka berita existing ↗</a></div></article>
-          <article class="ed-card"><div class="ed-thumb"><span>THUMBNAIL ARTIKEL<br><b>Perlu tarik asset CMS</b></span></div><div class="ed-body"><small>11 Juli 2026 · BERITA</small><strong>Denny Caknan Berduka, Ayah Bella Bonita Meninggal Dunia karena Sakit</strong><a href="https://www.kapanlagi.com/dangdut/denny-caknan-berduka-ayah-bella-bonita-meninggal-dunia-karena-sakit-798cb2.html" target="_blank" rel="noopener">Buka berita existing ↗</a></div></article>
-        </div>
-      </section>
-
-      <section class="section">
-        <div class="section-head"><div><h2>Foto & Berita Foto</h2><p>Pengayaan lintas produk dari konten artis yang sudah ada.</p></div><span class="status missing">Belum ada modul di Song Leaf</span></div>
-        <div class="ed-card" style="display:grid;grid-template-columns:150px 1fr">
-          <div class="ed-thumb" style="height:100%;min-height:130px"><span>FOTO GALERI<br><b>Asset belum ditarik</b></span></div>
-          <div class="ed-body"><small>21 April 2026 · BERITA FOTO</small><strong>Potret Denny Caknan dan Bella Bonita Liburan di Danau Toba, Boncengan Main Jetski</strong><p style="font-size:11px;color:var(--muted);margin:0 0 8px">Contoh aset foto artis yang dapat dihubungkan melalui relasi entity setelah verifikasi.</p><a href="https://www.kapanlagi.com/dangdut/berita-foto/potret-denny-caknan-dan-bella-bonita-liburan-di-danau-toba-boncengan-main-jetski.html" target="_blank" rel="noopener">Buka berita foto existing ↗</a></div>
-        </div>
-        <div class="missingbox" style="margin-top:10px"><strong>Yang belum tersedia di Song Leaf existing</strong>Modul galeri/berita foto terkait artis, thumbnail foto, jumlah foto, dan relasi terverifikasi ke Artist ID.</div>
-      </section>
-
-      <section class="section">
-        <div class="section-head"><div><h2>Video Lain dari Denny Caknan</h2><p>Video editorial KapanLagi yang dapat menjadi perluasan lintas produk.</p></div><span class="status missing">Belum ada modul di Song Leaf</span></div>
-        <div class="editorial">
-          <article class="ed-card"><div class="ed-thumb"><span>VIDEO THUMBNAIL<br><b>Asset belum ditarik</b></span></div><div class="ed-body"><small>VIDEO KAPANLAGI</small><strong>Bella Bonita Istri Denny Caknan Jadi Tukang Parkir Dadakan Gara-Gara Rumahnya Viral Dipakai COD</strong><a href="https://video.kapanlagi.com/bella-bonita-istri-denny-caknan-jadi-tukang-parkir-dadakan-gara-gara-rumahnya-viral-dipakai-cod-c1b2a3.html" target="_blank" rel="noopener">Buka video existing ↗</a></div></article>
-          <article class="ed-card"><div class="ed-thumb"><span>VIDEO THUMBNAIL<br><b>Asset belum ditarik</b></span></div><div class="ed-body"><small>VIDEO KAPANLAGI</small><strong>Viral Rumah Denny Caknan Dijadikan Pusat COD: Ada yang Minta Wifi Hingga Review Nyaman di Google</strong><a href="https://video.kapanlagi.com/viral-rumah-denny-caknan-dijadikan-pusat-cod-ada-yang-minta-wifi-hingga-review-nyaman-di-google-173781.html" target="_blank" rel="noopener">Buka video existing ↗</a></div></article>
-        </div>
-      </section>
+</div>
+<header class="site-header">
+  <div class="header-inner">
+    <div class="header-main">
+      <button class="menu-btn" type="button" onclick="document.querySelector('.main-nav').classList.toggle('nav-open')">MENU</button>
+      <a class="brand" href="https://www.kapanlagi.com/" aria-label="Logo KapanLagi">
+        <img src="https://cdns.klimg.com/kapanlagi.com/p/KLlogoClean.png" alt="KapanLagi" onerror="if(!this.dataset.fallback){this.dataset.fallback='1';this.src='https://cdns.klimg.com/kapanlagi.com/p/logo.png'}else{this.style.display='none';this.nextElementSibling.style.display='inline-block'}">
+        <span class="brand-fallback">KapanLagi</span>
+      </a>
+      <form class="header-search" action="https://lirik.kapanlagi.com/" method="get">
+        <input type="search" name="q" placeholder="Cari judul lagu atau nama artis..." aria-label="Cari judul lagu atau nama artis">
+        <button type="submit">CARI</button>
+      </form>
     </div>
+    <nav class="main-nav" aria-label="Navigasi utama KapanLagi">
+      <a href="https://www.kapanlagi.com/">Home</a>
+      <a href="https://www.kapanlagi.com/showbiz/selebriti/">Artis</a>
+      <a href="https://www.kapanlagi.com/showbiz/film/">Film</a>
+      <a href="https://musik.kapanlagi.com/">Musik</a>
+      <a href="https://www.kapanlagi.com/dangdut/">Dangdut</a>
+      <a class="active" href="https://lirik.kapanlagi.com/">Lirik</a>
+      <a href="https://www.kapanlagi.com/korea/">Korea</a>
+      <a href="https://www.kapanlagi.com/jepang/">Jepang</a>
+      <a href="https://www.kapanlagi.com/china/">China</a>
+      <a href="https://www.kapanlagi.com/foto/">Foto</a>
+      <a href="https://plus.kapanlagi.com/">Plus</a>
+      <a href="https://www.kapanlagi.com/trending/">Trending</a>
+      <a href="https://video.kapanlagi.com/">Video</a>
+    </nav>
+  </div>
+</header>
+<div class="trending-strip"><div class="inner"><strong>Trending</strong><a href="https://www.kapanlagi.com/dangdut/audisi-d-academy-8/">D Academy 8</a> · <a href="https://bintangpantura.kapanlagi.com/">Bintang Pantura 2026</a> · <a href="https://www.kapanlagi.com/tag/kabar-ruben-onsu/">Ruben Onsu</a> · <a href="https://www.kapanlagi.com/tag/sarwendah-berita-terbaru/">Sarwendah</a> · <a href="https://www.kapanlagi.com/tag/lesti-kejora-berita-terbaru/">Lesti Kejora</a> · <a href="https://www.kapanlagi.com/tag/brisia-jodie/">Brisia Jodie</a></div></div>
 
-    <aside>
-      <div class="artist-card">
-        <div class="artist-cover"><img src="https://cdns.klimg.com/kapanlagi.com/p/ddeeennnnnnyyyyz.jpg" alt="Foto Denny Caknan dari KapanLagi.com"></div>
-        <div class="artist-info">
-          <div class="kicker">Artist entity</div><h2>Denny Caknan</h2>
-          <p>Penyanyi & pencipta lagu pop Jawa / koplo · Ngawi</p>
-          <div class="artist-actions">
-            <a class="btn" href="https://lirik.kapanlagi.com/artis/denny-caknan/" target="_blank" rel="noopener">Buka Artist Hub ↗</a>
-            <a class="btn ghost" href="https://www.kapanlagi.com/denny-caknan/" target="_blank" rel="noopener">Celebrity Profile ↗</a>
-          </div>
-          <div style="margin-top:10px"><span class="status proposed">Primary entity navigation</span></div>
+<main class="page-wrap">
+  <div class="ad-slot">ADVERTISEMENT</div>
+  <div class="breadcrumb"><a href="https://www.kapanlagi.com/">Home</a><span>›</span><a href="https://lirik.kapanlagi.com/">Lirik Lagu</a><span>›</span><a href="https://lirik.kapanlagi.com/dr/d/">D</a><span>›</span><a href="https://www.kapanlagi.com/denny-caknan/">Denny Caknan</a></div>
+  <div class="search-row">
+    <form action="https://lirik.kapanlagi.com/" method="get">
+      <input type="search" name="q" placeholder="Cari judul lagu atau nama artis di sini..." aria-label="Cari judul lagu atau nama artis di sini">
+      <button type="submit">Telusuri</button>
+    </form>
+  </div>
+
+  <div class="columns">
+    <article>
+      <div class="article-head">
+        <h1>Lirik Tepain Nyaman</h1>
+        <div class="artist-byline">
+          <a href="https://www.kapanlagi.com/denny-caknan/" target="_blank" rel="noopener">Denny Caknan</a>
+          <span class="entity-inline">
+            <a href="https://lirik.kapanlagi.com/artis/denny-caknan/" target="_blank" rel="noopener">Artist Hub</a>
+            <a href="https://www.kapanlagi.com/denny-caknan/" target="_blank" rel="noopener">Profil Artis</a>
+          </span>
         </div>
       </div>
-      <div class="sidebox">
-        <h3>Metadata Lagu</h3>
-        <div class="meta-row"><span>Judul di halaman</span><strong>Tepain Nyaman</strong></div>
-        <div class="meta-row"><span>Judul di video/profil</span><strong>Tepian Nyaman <em style="color:#9a5b00">?</em></strong></div>
-        <div class="meta-row"><span>Artis</span><strong>Denny Caknan</strong></div>
-        <div class="meta-row"><span>Tahun rilis</span><strong>2018 <em style="color:#9a5b00">?</em></strong></div>
-        <div class="meta-row"><span>Pencipta</span><strong>Denny Caknan <em style="color:#9a5b00">?</em></strong></div>
-        <div class="meta-row"><span>Genre/tag</span><strong>Dangdut · Indonesia</strong></div>
-        <div class="meta-row"><span>Album</span><strong style="color:#bd2028">Belum tersedia</strong></div>
-        <div class="meta-row"><span>Durasi audio</span><strong style="color:#bd2028">Belum tersedia</strong></div>
-        <div class="meta-row"><span>Song ID / ISRC</span><strong style="color:#bd2028">Belum tersedia</strong></div>
-        <small style="color:var(--muted)">Tahun dan pencipta berasal dari sumber profil/video resmi di luar tampilan Song Leaf; perlu validasi CMS.</small>
+
+      <div class="share-row">
+        <span>Share</span>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Flirik.kapanlagi.com%2Fartis%2Fdenny-caknan%2Ftepain-nyaman%2F" aria-label="Bagikan ke Facebook" target="_blank" rel="noopener">f</a>
+        <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Flirik.kapanlagi.com%2Fartis%2Fdenny-caknan%2Ftepain-nyaman%2F&amp;text=Lirik+Tepain+Nyaman+dari+Denny+Caknan&amp;via=kapanlagicom" aria-label="Bagikan ke X" target="_blank" rel="noopener">X</a>
+        <a href="https://wa.me/?text=Lirik+Tepain+Nyaman+dari+Denny+Caknan+https%3A%2F%2Flirik.kapanlagi.com%2Fartis%2Fdenny-caknan%2Ftepain-nyaman%2F" aria-label="Bagikan ke WhatsApp" target="_blank" rel="noopener">WA</a>
+        <a href="#makna" aria-label="Baca makna lagu">Makna</a>
       </div>
-      <div class="entity-note">
-        <strong>Music Entity connection</strong>
-        Song Leaf → Artist ID → Artist Hub → Berita / Berita Foto / Video. ID dan foreign key aktual belum terlihat pada halaman publik; perlu konfirmasi Engineering.
-      </div>
-      <div class="sidebox">
-        <h3>Artwork Lagu</h3>
-        <div class="ed-thumb" style="height:150px;border-radius:10px"><span>SONG COVER<br><b>Belum ditemukan di halaman existing</b></span></div>
-        <div style="margin-top:9px"><span class="status missing">Perlu asset cover</span></div>
-      </div>
+
+      <section class="lyrics-block" id="lirik">
+        <h2>Video Tepain Nyaman</h2>
+        <p class="video-credit">youtube.com/DC. PRODUCTION</p>
+        <p class="lyric-excerpt">Tersisa semacam penantian<br>Semakin tak terkendali</p>
+        <div class="lyric-note">Cuplikan lirik untuk preview. Lirik lengkap tetap merujuk ke konten halaman existing.</div>
+        <a class="read-more" href="https://lirik.kapanlagi.com/artis/denny-caknan/tepain-nyaman/" target="_blank" rel="noopener">Lihat lirik lengkap di halaman KapanLagi ↗</a>
+      </section>
+
+      <section class="meaning-section" id="makna">
+        <h2>Makna Lagu Tepian Nyaman</h2>
+        <p>Lagu ini mengisahkan kerinduan kepada teman lama yang telah pergi merantau ke kota besar. Tokoh dalam lagu mengenang tempat yang dulu menjadi lokasi berkumpul dan bercanda bersama. Meski tempat itu masih ada dan terasa semakin indah, suasananya berubah karena sahabat yang biasa menemani sudah tidak lagi hadir.</p>
+        <p>Kerinduan yang disampaikan bukan tentang hubungan romantis, melainkan persahabatan dan kenangan masa kecil. Ada harapan agar teman lama itu pulang, kembali bertemu, dan menghidupkan lagi kebersamaan yang pernah mereka miliki.</p>
+        <p>Secara keseluruhan, lagu ini membawa tema persahabatan, nostalgia, dan waktu yang tidak dapat diulang. Kenangan bersama orang-orang terdekat tetap memiliki tempat khusus meskipun kehidupan membawa setiap orang ke jalan yang berbeda.</p>
+        <div class="tag-list">
+          <a href="https://lirik.kapanlagi.com/tag/lagu_dangdut/">Lagu Dangdut</a>
+          <a href="https://lirik.kapanlagi.com/tag/lagu_indonesia/">Lagu Indonesia</a>
+        </div>
+        <div class="entity-status"><strong>Catatan data:</strong> Judul halaman dan URL menggunakan “Tepain Nyaman”, sedangkan bagian makna dan profil artis menggunakan “Tepian Nyaman”. Perlu validasi penulisan judul kanonis sebelum normalisasi Song Entity.</div>
+      </section>
+
+      <section class="section-block">
+        <h2 class="section-title">Lirik Lagu Denny Caknan</h2>
+        <div class="song-links">
+          <a href="https://lirik.kapanlagi.com/artis/denny-caknan/laut-kidul-ft-hendra-kumbara/">Laut Kidul (ft Hendra Kumbara)</a>
+          <a href="https://lirik.kapanlagi.com/artis/denny-caknan/negoro-angin/">Negoro Angin</a>
+          <a href="https://lirik.kapanlagi.com/artis/denny-caknan/mblebes-ft-yeni-inka/">Mblebes (ft. Yeni Inka)</a>
+          <a href="https://lirik.kapanlagi.com/artis/denny-caknan/titenono/">Titenono</a>
+          <a href="https://lirik.kapanlagi.com/artis/denny-caknan/sinarengan/">Sinarengan</a>
+        </div>
+        <a class="more-link" href="https://lirik.kapanlagi.com/artis/denny-caknan/" target="_blank" rel="noopener">Selengkapnya ↗</a>
+      </section>
+
+      <section class="section-block">
+        <h2 class="section-title">Berita Artis Terbaru</h2>
+        <div class="news-list">
+          <article class="news-item">
+            <a class="news-thumb" href="https://www.kapanlagi.com/dangdut/denny-caknan-melangkah-ke-layar-lebar-jadi-mulyono-di-sukses-jaya-542a22903b.html"><img loading="lazy" src="https://cdns.klimg.com/kapanlagi.com/p/headline/denny-caknan-digeret-bayu-skak-4a1b29f1.jpg" alt="Denny Caknan Digandeng Bayu Skak ke Layar Lebar" onerror="this.onerror=null;this.src='https://cdns.klimg.com/kapanlagi.com/p/denny-caknan-digeret-bayu-skak-4a1b29f1.jpg'"></a>
+            <div><div class="news-meta">25 September 2026 10:45</div><div class="news-title"><a href="https://www.kapanlagi.com/dangdut/denny-caknan-melangkah-ke-layar-lebar-jadi-mulyono-di-sukses-jaya-542a22903b.html">Denny Caknan Digandeng Bayu Skak ke Layar Lebar, Jadi Mulyono di Film Sukses Jaya</a></div><div class="news-kind">Berita</div></div>
+          </article>
+          <article class="news-item">
+            <a class="news-thumb" href="https://www.kapanlagi.com/dangdut/bella-bonita-bagikan-momen-jfc-2026-tetap-tampil-walau-hujan-d581a124.html"><img loading="lazy" src="https://cdns.klimg.com/kapanlagi.com/p/headline/bella-bonita-bagikan-momen-jfc-752a1633.jpg" alt="Bella Bonita Bagikan Momen JFC 2026" onerror="this.onerror=null;this.src='https://cdns.klimg.com/kapanlagi.com/p/bella-bonita-bagikan-momen-jfc-752a1633.jpg'"></a>
+            <div><div class="news-meta">27 Juli 2026 16:18</div><div class="news-title"><a href="https://www.kapanlagi.com/dangdut/bella-bonita-bagikan-momen-jfc-2026-tetap-tampil-walau-hujan-d581a124.html">Bella Bonita Bagikan Momen JFC 2026, Tetap Tampil Walau Hujan</a></div><div class="news-kind">Berita</div></div>
+          </article>
+          <article class="news-item">
+            <a class="news-thumb" href="https://www.kapanlagi.com/dangdut/bella-bonita-kenang-mendiang-ayah-ungkap-kerinduan-91690b.html"><img loading="lazy" src="https://cdns.klimg.com/kapanlagi.com/p/headline/bella-bonita-kenang-mendiang-ayah-ungka-91690b.jpg" alt="Bella Bonita Kenang Mendiang Ayah" onerror="this.onerror=null;this.src='https://cdns.klimg.com/kapanlagi.com/p/bella-bonita-kenang-mendiang-ayah-ungka-91690b.jpg'"></a>
+            <div><div class="news-meta">17 Juli 2026 15:18</div><div class="news-title"><a href="https://www.kapanlagi.com/dangdut/bella-bonita-kenang-mendiang-ayah-ungkap-kerinduan-91690b.html">Bella Bonita Kenang Mendiang Ayah, Ungkap Kerinduan</a></div><div class="news-kind">Berita</div></div>
+          </article>
+          <article class="news-item">
+            <a class="news-thumb" href="https://www.kapanlagi.com/dangdut/denny-caknan-berduka-ayah-bella-bonita-meninggal-dunia-karena-sakit-798cb2.html"><img loading="lazy" src="https://cdns.klimg.com/kapanlagi.com/p/headline/denny-caknan-berduka-ayah-bella-bonita--fd26af.jpg" alt="Denny Caknan Berduka" onerror="this.onerror=null;this.src='https://cdns.klimg.com/kapanlagi.com/p/denny-caknan-berduka-ayah-bella-bonita--fd26af.jpg'"></a>
+            <div><div class="news-meta">11 Juli 2026 10:35</div><div class="news-title"><a href="https://www.kapanlagi.com/dangdut/denny-caknan-berduka-ayah-bella-bonita-meninggal-dunia-karena-sakit-798cb2.html">Denny Caknan Berduka, Ayah Bella Bonita Meninggal Dunia karena Sakit</a></div><div class="news-kind">Berita</div></div>
+          </article>
+          <article class="news-item">
+            <a class="news-thumb" href="https://www.kapanlagi.com/dangdut/denny-caknan-ikut-lomba-mancing-di-kampung-langsung-menang-juara-1-e68d11.html"><img loading="lazy" src="https://cdns.klimg.com/kapanlagi.com/p/headline/denny-caknan-ikut-lomba-mancing-di-kamp-e68d11.jpg" alt="Denny Caknan Ikut Lomba Mancing" onerror="this.onerror=null;this.src='https://cdns.klimg.com/kapanlagi.com/p/denny-caknan-ikut-lomba-mancing-di-kamp-e68d11.jpg'"></a>
+            <div><div class="news-meta">18 Mei 2026 16:44</div><div class="news-title"><a href="https://www.kapanlagi.com/dangdut/denny-caknan-ikut-lomba-mancing-di-kampung-langsung-menang-juara-1-e68d11.html">Denny Caknan Ikut Lomba Mancing di Kampung, Langsung Menang Juara 1</a></div><div class="news-kind">Berita</div></div>
+          </article>
+          <article class="news-item">
+            <a class="news-thumb" href="https://www.kapanlagi.com/dangdut/serunya-denny-caknan-touring-ke-bali-pakai-mobil-klasik-5da648.html"><img loading="lazy" src="https://cdns.klimg.com/kapanlagi.com/p/headline/serunya-denny-caknan-touring-ke-bali-pa-5da648.jpg" alt="Serunya Denny Caknan Touring ke Bali" onerror="this.onerror=null;this.src='https://cdns.klimg.com/kapanlagi.com/p/serunya-denny-caknan-touring-ke-bali-pa-5da648.jpg'"></a>
+            <div><div class="news-meta">01 Maret 2026 17:44</div><div class="news-title"><a href="https://www.kapanlagi.com/dangdut/serunya-denny-caknan-touring-ke-bali-pakai-mobil-klasik-5da648.html">Serunya Denny Caknan Touring ke Bali Pakai Mobil Klasik</a></div><div class="news-kind">Berita</div></div>
+          </article>
+          <article class="news-item">
+            <a class="news-thumb" href="https://www.kapanlagi.com/dangdut/penuh-keceriaan-perayaan-ultah-putri-denny-caknan-dihadiri-sahabat-tercinta-58df48.html"><img loading="lazy" src="https://cdns.klimg.com/kapanlagi.com/p/headline/penuh-keceriaan-perayaan-ultah-putri-de-58df48.jpg" alt="Perayaan Ultah Putri Denny Caknan" onerror="this.onerror=null;this.src='https://cdns.klimg.com/kapanlagi.com/p/penuh-keceriaan-perayaan-ultah-putri-de-58df48.jpg'"></a>
+            <div><div class="news-meta">15 Februari 2026 16:23</div><div class="news-title"><a href="https://www.kapanlagi.com/dangdut/penuh-keceriaan-perayaan-ultah-putri-denny-caknan-dihadiri-sahabat-tercinta-58df48.html">Penuh Keceriaan, Perayaan Ultah Putri Denny Caknan Dihadiri Sahabat Tercinta</a></div><div class="news-kind">Berita</div></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-block">
+        <h2 class="section-title">Video Denny Caknan</h2>
+        <div class="video-list">
+          <article class="video-item"><a class="thumb" href="https://video.kapanlagi.com/bella-bonita-istri-denny-caknan-jadi-tukang-parkir-dadakan-gara-gara-rumahnya-viral-dipakai-cod-c1b2a3.html"><img loading="lazy" src="https://cdns.klimg.com/kapanlagi.com/p/headline/bella-bonita-istri-denny-caknan-jadi-tu-c1b2a3.jpg" alt="Bella Bonita Jadi Tukang Parkir Dadakan" onerror="this.onerror=null;this.src='https://cdns.klimg.com/kapanlagi.com/p/bella-bonita-istri-denny-caknan-jadi-tu-c1b2a3.jpg'"></a><a href="https://video.kapanlagi.com/bella-bonita-istri-denny-caknan-jadi-tukang-parkir-dadakan-gara-gara-rumahnya-viral-dipakai-cod-c1b2a3.html">Bella Bonita Istri Denny Caknan Jadi Tukang Parkir Dadakan Gara-Gara Rumahnya Viral Dipakai COD</a><small>05 Januari 2026 17:41</small></article>
+          <article class="video-item"><a class="thumb" href="https://video.kapanlagi.com/viral-rumah-denny-caknan-dijadikan-pusat-cod-ada-yang-minta-wifi-hingga-review-nyaman-di-google-173781.html"><img loading="lazy" src="https://cdns.klimg.com/kapanlagi.com/p/headline/viral-rumah-denny-caknan-dijadikan-pusa-173781.jpg" alt="Rumah Denny Caknan Dijadikan Pusat COD" onerror="this.onerror=null;this.src='https://cdns.klimg.com/kapanlagi.com/p/viral-rumah-denny-caknan-dijadikan-pusa-173781.jpg'"></a><a href="https://video.kapanlagi.com/viral-rumah-denny-caknan-dijadikan-pusat-cod-ada-yang-minta-wifi-hingga-review-nyaman-di-google-173781.html">Viral Rumah Denny Caknan Dijadikan Pusat COD: Ada yang Minta Wifi Hingga Review Nyaman di Google</a><small>19 Desember 2025 14:45</small></article>
+          <article class="video-item"><a class="thumb" href="https://video.kapanlagi.com/pandawara-mau-beli-hutan-indonesia-denny-caknan-siap-donasi-1-miliar-26edd9.html"><img loading="lazy" src="https://cdns.klimg.com/kapanlagi.com/p/headline/pandawara-mau-beli-hutan-indonesia-denn-26edd9.jpg" alt="Pandawara dan Denny Caknan" onerror="this.onerror=null;this.src='https://cdns.klimg.com/kapanlagi.com/p/pandawara-mau-beli-hutan-indonesia-denn-26edd9.jpg'"></a><a href="https://video.kapanlagi.com/pandawara-mau-beli-hutan-indonesia-denny-caknan-siap-donasi-1-miliar-26edd9.html">Pandawara Mau Beli Hutan Indonesia, Denny Caknan Siap Donasi 1 Miliar</a><small>11 Desember 2025 10:53</small></article>
+        </div>
+      </section>
+
+      <section class="entity-panel">
+        <div class="entity-panel-head">Konten Denny Caknan di KapanLagi</div>
+        <div class="entity-person">
+          <img src="https://cdns.klimg.com/kapanlagi.com/p/ddeeennnnnnyyyyz.jpg" alt="Foto profil Denny Caknan">
+          <div><strong>Denny Caknan</strong><small>Penyanyi dan pencipta lagu pop Jawa dan koplo · Ngawi</small></div>
+        </div>
+        <div class="entity-actions">
+          <a href="https://www.kapanlagi.com/denny-caknan/" target="_blank" rel="noopener">Celebrity Profile</a>
+          <a href="https://lirik.kapanlagi.com/artis/denny-caknan/" target="_blank" rel="noopener">Artist Hub / Lirik</a>
+          <a href="https://www.kapanlagi.com/denny-caknan/berita/" target="_blank" rel="noopener">Berita artis</a>
+        </div>
+        <div class="entity-status">Pengayaan Music Entity: relasi ke profil artis, berita, foto, berita foto, dan video dapat dikelola dari satu identitas artis terverifikasi. Halaman publik belum menampilkan Artist ID atau foreign key.</div>
+      </section>
+    </article>
+
+    <aside class="side-column">
+      <section class="side-section">
+        <h2 class="side-title">Profil Artis</h2>
+        <div class="artist-card">
+          <img src="https://cdns.klimg.com/kapanlagi.com/p/ddeeennnnnnyyyyz.jpg" alt="Foto profil Denny Caknan">
+          <strong>Denny Caknan</strong>
+          <p>Laki-Laki · Ngawi<br>Deni Setiawan, dikenal sebagai Denny Caknan, merupakan penyanyi dan pencipta lagu pop Jawa dan koplo.</p>
+          <a class="profile-link" href="https://www.kapanlagi.com/denny-caknan/" target="_blank" rel="noopener">Selengkapnya di KapanLagi ↗</a>
+        </div>
+      </section>
+      <section class="side-section">
+        <h2 class="side-title">Lirik Lagu Denny Caknan</h2>
+        <div class="side-song-list">
+          <a href="https://lirik.kapanlagi.com/artis/denny-caknan/laut-kidul-ft-hendra-kumbara/">Laut Kidul (ft Hendra Kumbara)</a>
+          <a href="https://lirik.kapanlagi.com/artis/denny-caknan/negoro-angin/">Negoro Angin</a>
+          <a href="https://lirik.kapanlagi.com/artis/denny-caknan/mblebes-ft-yeni-inka/">Mblebes (ft. Yeni Inka)</a>
+          <a href="https://lirik.kapanlagi.com/artis/denny-caknan/titenono/">Titenono</a>
+          <a href="https://lirik.kapanlagi.com/artis/denny-caknan/sinarengan/">Sinarengan</a>
+        </div>
+        <a class="more-link" href="https://lirik.kapanlagi.com/artis/denny-caknan/" target="_blank" rel="noopener">Selengkapnya ↗</a>
+      </section>
+      <section class="side-section">
+        <h2 class="side-title">Detail Lagu</h2>
+        <table class="meta-table">
+          <tr><td>Judul halaman</td><td>Tepain Nyaman</td></tr>
+          <tr><td>Judul di profil</td><td>Tepian Nyaman</td></tr>
+          <tr><td>Artis</td><td>Denny Caknan</td></tr>
+          <tr><td>Tahun rilis</td><td>2018</td></tr>
+          <tr><td>Pencipta</td><td>Denny Caknan</td></tr>
+          <tr><td>Album</td><td class="missing">Belum tersedia</td></tr>
+          <tr><td>Durasi</td><td class="missing">Belum tersedia</td></tr>
+          <tr><td>ISRC / Song ID</td><td class="missing">Belum tersedia</td></tr>
+        </table>
+        <div class="side-note">Tahun rilis dan pencipta mengacu pada profil artis dan deskripsi video resmi. Album, durasi, ISRC, serta ID lagu belum terlihat pada sumber publik yang diperiksa.</div>
+      </section>
+      <section class="side-section">
+        <h2 class="side-title">Foto &amp; Berita Foto</h2>
+        <div class="photo-integration">Koleksi foto dan berita foto Denny Caknan tersedia melalui halaman artis KapanLagi. <br><br><a href="https://www.kapanlagi.com/denny-caknan/" target="_blank" rel="noopener">Lihat konten Foto &amp; Berita Foto ↗</a><br><br><span style="color:#999">Modul ini merupakan usulan integrasi lintas produk pada Song Leaf.</span></div>
+      </section>
     </aside>
   </div>
 </main>
-<footer><div class="wrap"><span>Prototype konseptual untuk review Product, Management, Editorial & Engineering.</span><span>Konten dan tautan mengacu pada halaman existing; penanda merah/kuning menunjukkan gap atau data yang perlu validasi.</span></div></footer>
+
+<footer class="site-footer">
+  <div class="inner">
+    <div class="footer-logo">KapanLagi.com</div>
+    <div class="footer-links">
+      <a href="https://company.kapanlagi.com/">About Us</a><a href="https://company.kapanlagi.com/redaksi/">Redaksi</a><a href="https://company.kapanlagi.com/tos/">Disclaimer</a><a href="https://company.kapanlagi.com/kode-etik/">Kode Etik</a><a href="https://company.kapanlagi.com/privacy-policy/">Privacy Policy</a><a href="https://company.kapanlagi.com/pedoman-media-siber/">Pedoman Media Siber</a><a href="https://www.kapanlagi.com/sitemap.html">Sitemap</a>
+    </div>
+    <div class="footer-social">Connect with Us · WhatsApp · Facebook · X · Instagram · YouTube · TikTok</div>
+    <div class="footer-copy">Copyright © 2026 Kapanlagi.com KLY KapanLagi Youniverse - All Right Reserved.</div>
+  </div>
+</footer>
+<script>
+document.querySelectorAll('.main-nav').forEach(function(nav){nav.classList.remove('nav-open')});
+</script>
 </body>
 </html>

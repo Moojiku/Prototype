@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Prototype halaman Profil Denny Caknan — biodata, berita, galeri, video, dan tautan katalog musik KapanLagi.">
+<title>Profil Denny Caknan — Celebrity Profile | KapanLagi Prototype</title>
+<style>
+:root{--red:#ec1735;--red2:#b9102a;--ink:#25252b;--muted:#767780;--line:#e7e7e9;--bg:#f5f5f7;--card:#fff;--shadow:0 12px 30px rgba(22,25,36,.06)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.58 Arial,Helvetica,sans-serif}
+a{color:inherit;text-decoration:none}a:hover{color:var(--red)}
+button{font:inherit;cursor:pointer}
+.top{background:#24242a;color:#f9f9f9;font-size:11px}
+.inner{max-width:1150px;margin:auto;padding:0 20px}
+.top .inner{min-height:29px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.top a{color:#eee}
+.proto{background:#fff1f3;border-bottom:1px solid #ffd1d8;color:#7c2131;font-size:11px}
+.proto .inner{padding-top:9px;padding-bottom:9px;display:flex;gap:8px;align-items:center}
+.proto strong{font-weight:900}
+header{background:#fff;border-bottom:1px solid var(--line)}
+.brand-row{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-top:17px}
+.logo{font-size:33px;color:var(--red);font-weight:900;letter-spacing:-2px;line-height:1}
+.logo small{display:block;color:#aaa;letter-spacing:2px;font-size:9px;margin-top:4px}
+.header-search{display:flex;width:min(330px,45vw);height:35px;border:1px solid #d8d9dc;border-radius:4px;overflow:hidden}
+.header-search input{padding:0 10px;min-width:0;flex:1;border:0;outline:0}
+.header-search button{background:#2a2b30;border:0;color:white;padding:0 15px;font-size:11px}
+.site-nav{display:flex;overflow-x:auto;white-space:nowrap;margin-top:18px;gap:3px}
+.site-nav a{display:block;padding:11px 12px;font-size:12px;font-weight:800;color:#494b53}
+.site-nav a.active{color:var(--red);border-bottom:3px solid var(--red)}
+.main{max-width:1150px;margin:auto;padding:23px 20px 64px}
+.breadcrumb{font-size:11px;color:#8a8b92;margin-bottom:18px}
+.breadcrumb span{margin:0 8px;color:#b6b7bc}
+.page-tabs{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:23px}
+.page-tabs a{background:white;color:#545761;padding:10px 16px;border:1px solid #e4e5e9;font-size:12px;font-weight:800;border-radius:8px}
+.page-tabs a.active{background:#2d2e33;border-color:#2d2e33;color:#fff}
+.profile-hero{background:#fff;border:1px solid var(--line);border-radius:13px;overflow:hidden;box-shadow:var(--shadow)}
+.hero-top{display:grid;grid-template-columns:225px 1fr;min-height:235px}
+.portrait{height:100%;min-height:235px;background:#e4d2d4;position:relative}
+.portrait img{width:100%;height:100%;object-fit:cover;object-position:center 20%}
+.portrait .fallback{position:absolute;inset:0;display:none;place-items:center;background:#c9354f;color:white;font-size:72px;font-weight:900}
+.identity{padding:28px 32px 21px}
+.eyebrow{text-transform:uppercase;color:var(--red);font-weight:800;letter-spacing:1.8px;font-size:10px}
+.identity h1{font-size:36px;margin:6px 0 9px;line-height:1.13;letter-spacing:-1px}
+.intro{color:#5b5c64;font-size:14px;max-width:670px}
+.fact-chips{display:flex;gap:7px;flex-wrap:wrap;margin:16px 0}
+.chip{border:1px solid #e8e8eb;padding:5px 10px;border-radius:100px;font-size:11px;color:#61636c;font-weight:700;background:#fafafb}
+.actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:15px}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:10px 15px;border-radius:7px;font-size:12px;font-weight:800;border:1px solid #d9dade}
+.btn-red{background:var(--red);border-color:var(--red);color:#fff!important}.btn-red:hover{background:var(--red2)}
+.btn-light{background:#fff}
+.artist-tabs{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));border-top:1px solid #eee;background:#fff}
+.artist-tabs a,.artist-tabs span{padding:13px 6px;text-align:center;font-size:12px;font-weight:800;color:#555;white-space:nowrap;border-right:1px solid #f0f0f2}
+.artist-tabs a.active{color:var(--red);border-bottom:3px solid var(--red)}
+.artist-tabs span{color:#babdc2}
+.layout{display:grid;grid-template-columns:minmax(0,1.65fr) minmax(290px,.9fr);gap:21px;margin-top:22px;align-items:start}
+.stack{display:grid;gap:19px}
+.card{background:#fff;border:1px solid var(--line);border-radius:11px;padding:23px;box-shadow:var(--shadow)}
+.kicker{font-size:10px;color:var(--red);font-weight:800;letter-spacing:1.4px;text-transform:uppercase;margin-bottom:7px}
+.card h2{font-size:21px;letter-spacing:-.4px;margin:0 0 13px}
+.card h3{font-size:15px;line-height:1.36;margin:4px 0 9px}
+.card p{margin:0 0 12px;color:#5e6069}
+.card p:last-child{margin-bottom:0}
+.more{color:var(--red);font-size:12px;font-weight:800}
+.bio-quote{background:#faf3f5;border-left:3px solid var(--red);padding:14px 16px;border-radius:0 8px 8px 0;font-size:12px;color:#5b4a50}
+.news-item{padding:17px 0;border-top:1px solid #eee;display:grid;grid-template-columns:92px 1fr;gap:14px}
+.news-item:first-of-type{border-top:0}
+.news-thumb{border-radius:7px;min-height:88px;display:flex;align-items:end;padding:9px;color:#fff;font-size:10px;font-weight:900;letter-spacing:.6px;background:linear-gradient(135deg,#2a3038,#b4435e)}
+.news-thumb.two{background:linear-gradient(135deg,#986267,#e6ad89)}
+.news-thumb.three{background:linear-gradient(135deg,#31364b,#5d6e8b)}
+.news-item time{display:block;font-size:11px;color:#90919a;margin:2px 0}
+.news-item h3{margin:5px 0;font-size:15px}
+.news-item a{color:#272932}.news-item a:hover{color:var(--red)}
+.news-item p{font-size:12px;margin:5px 0}
+.section-row{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px}
+.section-row h2{margin:0}
+.tag{background:#f9e5e9;color:#a7203b;font-size:10px;font-weight:900;border-radius:20px;padding:5px 9px}
+.facts{display:grid;gap:0}
+.fact{display:grid;grid-template-columns:118px 1fr;gap:12px;border-bottom:1px solid #eee;padding:12px 0;font-size:12px}
+.fact:last-child{border-bottom:0}
+.fact span{color:#8a8b93}.fact strong{color:#3f4149}
+.music-box{border:1px solid #f5cbd2;border-radius:9px;padding:17px;background:#fff8f9}
+.music-box h3{font-size:17px;margin:0 0 8px}
+.music-box p{font-size:12px;margin-bottom:15px}
+.music-list{list-style:none;margin:0 0 12px;padding:0}
+.music-list li{padding:8px 0;border-top:1px solid #f1e2e4;font-size:12px;display:flex;align-items:center;justify-content:space-between}
+.music-list li::after{content:"↗";color:var(--red)}
+.gallery-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.gallery{min-height:125px;border-radius:8px;padding:12px;display:flex;align-items:end;background:linear-gradient(140deg,#7d3e48,#efb7aa);color:#fff;font-size:12px;font-weight:800}
+.gallery:nth-child(2){background:linear-gradient(145deg,#4d587a,#c9a4aa)}
+.video-box{padding:14px 16px;background:#f7f7f9;border:1px solid #ececf0;border-radius:8px;display:flex;gap:11px;align-items:center}
+.video-icon{width:44px;height:44px;border-radius:9px;background:#fff1f3;color:var(--red);display:grid;place-items:center;font-size:22px;flex:none}
+.video-box a{font-weight:800;font-size:12px}
+.note{font-size:11px;color:#858790!important;padding-top:10px}
+.footer{border-top:1px solid #e5e5e8;padding:27px 20px;text-align:center;font-size:11px;color:#8a8b94;background:#fff}
+@media(max-width:800px){.layout{grid-template-columns:1fr}.hero-top{grid-template-columns:165px 1fr}.portrait{min-height:250px}.identity{padding:22px}.identity h1{font-size:30px}}
+@media(max-width:560px){.inner{padding:0 14px}.top .inner{font-size:10px}.main{padding:16px 12px 44px}.logo{font-size:28px}.header-search{width:45vw}.header-search button{display:none}.site-nav a{padding:9px;font-size:10px}.page-tabs{gap:5px}.page-tabs a{padding:8px 10px;font-size:10px}.hero-top{grid-template-columns:120px 1fr;min-height:205px}.portrait{min-height:205px}.identity{padding:15px}.identity h1{font-size:26px}.intro{font-size:11px}.fact-chips{gap:4px;margin:9px 0}.chip{font-size:9px;padding:4px 6px}.btn{padding:7px 9px;font-size:10px}.artist-tabs a,.artist-tabs span{font-size:8px;padding:11px 0}.card{padding:18px}.card h2{font-size:19px}.news-item{grid-template-columns:75px 1fr;gap:10px}.news-thumb{min-height:83px;font-size:8px}.news-item h3{font-size:13px}.fact{grid-template-columns:98px 1fr}.gallery{min-height:105px}}
+</style>
+</head>
+<body>
+<div class="top"><div class="inner"><span>KapanLagi.com · Entertainment &amp; Celebrity</span><span>PROTOTYPE · Bukan halaman live</span></div></div>
+<div class="proto"><div class="inner"><strong>Music Entity Transformation</strong><span>— Halaman Celebrity Profile: konteks biodata, karier, berita, foto &amp; video</span></div></div>
+<header>
+  <div class="inner">
+    <div class="brand-row">
+      <a href="https://www.kapanlagi.com/" class="logo">kapanlagi<small>ENTERTAINMENT</small></a>
+      <form class="header-search" action="https://www.google.com/search" method="get" target="_blank"><input type="search" name="q" aria-label="Cari artis" placeholder="Cari artis &amp; berita..." required><button type="submit">CARI</button></form>
+    </div>
+    <nav class="site-nav" aria-label="Navigasi utama">
+      <a href="https://www.kapanlagi.com/">HOME</a><a class="active" href="https://www.kapanlagi.com/showbiz/selebriti/">ARTIS</a><a href="https://www.kapanlagi.com/showbiz/film/">FILM</a><a href="https://musik.kapanlagi.com/">MUSIK</a><a href="https://www.kapanlagi.com/dangdut/">DANGDUT</a><a href="https://lirik.kapanlagi.com/">LIRIK</a><a href="https://www.kapanlagi.com/foto/">FOTO</a><a href="https://video.kapanlagi.com/">VIDEO</a>
+    </nav>
+  </div>
+</header>
+<main class="main">
+  <div class="breadcrumb"><a href="https://www.kapanlagi.com/">Home</a><span>›</span>Artis<span>›</span><strong>Denny Caknan</strong></div>
+  <nav class="page-tabs" aria-label="Jelajahi tiga halaman prototype">
+    <a href="index.html">01 · Music Hub</a>
+    <a href="song-leaf.html">02 · Song Leaf</a>
+    <a class="active" href="celebrity-profile.html" aria-current="page">03 · Celebrity Profile</a>
+  </nav>
+  <div class="profile-hero">
+    <div class="hero-top">
+      <div class="portrait">
+        <img src="https://cdns.klimg.com/kapanlagi.com/p/ddeeennnnnnyyyyz.jpg" alt="Foto Denny Caknan" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'">
+        <span class="fallback" aria-hidden="true">DC</span>
+      </div>
+      <div class="identity">
+        <div class="eyebrow">Profil Artis</div>
+        <h1>Denny Caknan</h1>
+        <div class="intro">Kenali sosok Denny Caknan, perjalanan karier, kabar terbaru, dan momen menarik di balik panggung.</div>
+        <div class="fact-chips"><span class="chip">Deni Setiawan</span><span class="chip">10 Desember 1993</span><span class="chip">Ngawi, Jawa Timur</span></div>
+        <div class="actions">
+          <a href="#biografi" class="btn btn-red">Baca Profil ↓</a>
+          <a href="index.html" class="btn btn-light">Lagu Denny Caknan ↗</a>
+        </div>
+      </div>
+    </div>
+    <nav class="artist-tabs" aria-label="Kategori konten artis">
+      <a class="active" href="#profil" aria-current="page">SEMUA</a>
+      <a href="#biografi">PROFIL</a>
+      <a href="#berita">BERITA</a>
+      <span aria-disabled="true" title="Menu foto artis existing belum memiliki tautan langsung yang terverifikasi">FOTO</span>
+      <a href="#foto">BERITA FOTO</a>
+      <a href="#video">VIDEO</a>
+      <a href="index.html">LIRIK</a>
+    </nav>
+  </div>
+  <div class="layout" id="profil">
+    <div class="stack">
+      <section class="card" id="biografi">
+        <div class="kicker">Biodata &amp; Perjalanan Karier</div>
+        <h2>Profil Denny Caknan</h2>
+        <p><strong>Deni Setiawan</strong>, dikenal sebagai Denny Caknan, merupakan penyanyi dan pencipta lagu pop Jawa dan koplo dari Ngawi, Jawa Timur.</p>
+        <p>Ia mulai banyak dikenal lewat lagu <em>Kartonyono Medot Janji</em> dan <em>Los Dol</em>. Karyanya kerap menggunakan bahasa Jawa dengan sentuhan musik pop dan kendhang; ia juga menyebut Didi Kempot sebagai salah satu pengaruh musikalnya.</p>
+        <div class="bio-quote">Fokus halaman ini adalah <strong>identitas personal dan perjalanan karier</strong>. Katalog lagu lengkap tidak disalin ke profil; pembaca dapat mengaksesnya melalui Music Hub.</div>
+        <p class="note">Ringkasan berdasarkan <a class="more" href="https://www.kapanlagi.com/denny-caknan/profil/" target="_blank" rel="noopener">profil existing KapanLagi</a>. Data yang berpotensi berubah perlu disinkronkan dari CMS.</p>
+      </section>
+      <section class="card" id="berita">
+        <div class="section-row"><h2>Berita Denny Caknan</h2><span class="tag">EDITORIAL</span></div>
+        <div class="news-item">
+          <div class="news-thumb">BERITA ARTIS</div>
+          <div><time datetime="2026-09-25">25 September 2026</time><h3><a href="https://www.kapanlagi.com/dangdut/denny-caknan-melangkah-ke-layar-lebar-jadi-mulyono-di-sukses-jaya-542a22903b.html" target="_blank" rel="noopener">Denny Caknan Melangkah ke Layar Lebar, Jadi Mulyono di Sukses Jaya</a></h3><p>Perkembangan karier Denny Caknan di dunia film dan hiburan.</p></div>
+        </div>
+        <div class="news-item">
+          <div class="news-thumb two">SELEBRITAS</div>
+          <div><time datetime="2026-07-27">27 Juli 2026</time><h3><a href="https://www.kapanlagi.com/dangdut/bella-bonita-bagikan-momen-jfc-2026-tetap-tampil-walau-hujan-d581a124.html" target="_blank" rel="noopener">Bella Bonita Bagikan Momen JFC 2026, Tetap Tampil Walau Hujan</a></h3><p>Kabar terbaru dari orang terdekat Denny Caknan dalam liputan KapanLagi.</p></div>
+        </div>
+        <div class="news-item">
+          <div class="news-thumb three">KEHIDUPAN ARTIS</div>
+          <div><time datetime="2026-05-18">18 Mei 2026</time><h3><a href="https://www.kapanlagi.com/dangdut/denny-caknan-ikut-lomba-mancing-di-kampung-langsung-menang-juara-1-e68d11.html" target="_blank" rel="noopener">Denny Caknan Ikut Lomba Mancing di Kampung, Langsung Menang Juara 1</a></h3><p>Momen keseharian yang berada di ranah celebrity, bukan metadata lagu.</p></div>
+        </div>
+        <a class="more" href="https://www.kapanlagi.com/denny-caknan/berita/" target="_blank" rel="noopener">Lihat berita Denny Caknan selengkapnya →</a>
+      </section>
+      <section class="card" id="foto">
+        <div class="section-row"><h2>Foto &amp; Berita Foto</h2><span class="tag">GALERI</span></div>
+        <div class="gallery-grid">
+          <a class="gallery" href="https://www.kapanlagi.com/denny-caknan/berita-foto/" target="_blank" rel="noopener">Momen Denny Caknan &amp; keluarga ↗</a>
+          <a class="gallery" href="https://www.kapanlagi.com/denny-caknan/berita-foto/" target="_blank" rel="noopener">Kumpulan berita foto artis ↗</a>
+        </div>
+        <p class="note">Kartu ilustratif; foto artikel bersumber dari halaman galeri existing.</p>
+      </section>
+      <section class="card" id="video">
+        <div class="section-row"><h2>Video Selebritas</h2><span class="tag">VIDEO</span></div>
+        <div class="video-box"><div class="video-icon" aria-hidden="true">▶</div><div><a href="https://video.kapanlagi.com/" target="_blank" rel="noopener">Jelajahi video artis di KapanLagi</a><div style="font-size:11px;color:#8b8c94">Konten hiburan, wawancara, dan aktivitas artis. Rute video per artis perlu validasi CMS.</div></div></div>
+      </section>
+    </div>
+    <aside class="stack">
+      <section class="card">
+        <div class="kicker">Identitas Artis</div>
+        <h2>Fakta Singkat</h2>
+        <div class="facts">
+          <div class="fact"><span>Nama panggung</span><strong>Denny Caknan</strong></div>
+          <div class="fact"><span>Nama asli</span><strong>Deni Setiawan</strong></div>
+          <div class="fact"><span>Lahir</span><strong>10 Desember 1993</strong></div>
+          <div class="fact"><span>Asal</span><strong>Ngawi, Jawa Timur</strong></div>
+          <div class="fact"><span>Profesi</span><strong>Penyanyi, pencipta lagu</strong></div>
+        </div>
+        <p class="note">Data contoh mengikuti halaman profil existing; satu identitas artis yang sama akan digunakan lintas halaman.</p>
+      </section>
+      <section class="card">
+        <div class="kicker">Jelajahi Musik</div>
+        <div class="music-box">
+          <h3>Lagu Denny Caknan</h3>
+          <p>Katalog lengkap ada di Music Hub. Halaman profil ini hanya memberi akses ke karya musik, bukan memelihara daftar single terpisah.</p>
+          <ul class="music-list"><li>Semua lagu &amp; lirik</li><li>Kolaborasi musik</li><li>Video &amp; informasi lagu</li></ul>
+          <a href="index.html" class="btn btn-red" style="width:100%">Buka Lagu Denny Caknan →</a>
+        </div>
+      </section>
+      <section class="card">
+        <div class="kicker">Halaman Existing</div>
+        <h2>Sumber KapanLagi</h2>
+        <p><a class="more" target="_blank" rel="noopener" href="https://www.kapanlagi.com/denny-caknan/">Profil &amp; berita artis ↗</a></p>
+        <p><a class="more" target="_blank" rel="noopener" href="https://www.kapanlagi.com/denny-caknan/profil/">Biografi lengkap ↗</a></p>
+        <p><a class="more" target="_blank" rel="noopener" href="https://www.kapanlagi.com/denny-caknan/berita-foto/">Berita foto ↗</a></p>
+      </section>
+    </aside>
+  </div>
+</main>
+<footer class="footer">Prototype Music Entity Transformation · Fokus Celebrity Profile · Bukan situs KapanLagi live · Semua perpindahan antartipe halaman didemonstrasikan lewat navigasi di atas.</footer>
+</body>
+</html>

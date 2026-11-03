@@ -3,7 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>KapanLagi Music Entity Prototype — Denny Caknan</title>
+<title>Lagu Denny Caknan — Music Hub | KapanLagi Prototype</title>
+<meta name="description" content="Prototype Music Hub KapanLagi: katalog lagu Denny Caknan, kolaborasi, dan konten musik terkait.">
 <style>
 :root{
   --red:#e21f2b;--red-dark:#b91520;--ink:#24252a;--muted:#737782;
@@ -146,22 +147,28 @@ a{color:inherit}
  .screen:last-of-type{page-break-after:auto}
  .card{box-shadow:none}
 }
+.view-tabs a{display:inline-flex;align-items:center;justify-content:center;border:0;background:transparent;padding:9px 13px;border-radius:6px;color:#555963;font-size:12px;font-weight:700;text-decoration:none;white-space:nowrap}
+.view-tabs a.active{background:#fff;color:var(--red);box-shadow:0 1px 4px rgba(0,0,0,.08)}
+.entity-nav a{white-space:nowrap;background:#fff;border:1px solid var(--line);border-radius:7px;padding:10px 14px;font-size:11px;color:#626671;font-weight:700;text-decoration:none}
+.entity-nav a.active{background:#fff0f1;color:var(--red);border-color:#f3c9cc}
+#song-list{scroll-margin-top:18px}
+@media(max-width:760px){.view-tabs{max-width:100%;overflow-x:auto}.view-tabs a{font-size:10px;padding:8px 9px}.artist-hero h1{font-size:23px}}
 </style>
 </head>
 <body>
-<div class="prototype-bar"><strong>PROTOTYPE KONSEP</strong> · Bukan halaman live · Usulan pengembangan Artist Hub &amp; Song Leaf</div>
+<div class="prototype-bar"><strong>MUSIC ENTITY PROTOTYPE</strong> · Halaman Music Hub · Bukan situs KapanLagi live</div>
 <header class="site-header">
   <div class="header-inner">
     <div class="header-top">
-      <a class="logo" href="#" aria-label="KapanLagi">kapanlagi<small>MUSIC ENTITY EXPERIENCE</small></a>
+      <a class="logo" href="https://lirik.kapanlagi.com/" aria-label="KapanLagi">kapanlagi<small>MUSIC ENTITY EXPERIENCE</small></a>
       <div class="header-actions">
-        <a href="https://lirik.kapanlagi.com/artis/denny-caknan/" target="_blank" rel="noopener">Lihat Artist Hub existing ↗</a>
-        <a href="https://lirik.kapanlagi.com/artis/denny-caknan/negoro-angin/" target="_blank" rel="noopener">Lihat Song Leaf existing ↗</a>
+        <a href="https://lirik.kapanlagi.com/artis/denny-caknan/" target="_blank" rel="noopener">Katalog existing ↗</a>
+        <a href="song-leaf.html">Lihat halaman lirik →</a>
         <button class="primary-btn" onclick="window.print()">Cetak / Simpan PDF</button>
       </div>
     </div>
     <nav class="main-nav" aria-label="Navigasi KapanLagi">
-      <a href="#">HOME</a><a href="#">ARTIS</a><a href="#">FILM</a><a href="#">MUSIK</a><a href="#">DANGDUT</a><a class="active" href="#">LIRIK</a><a href="#">FOTO</a><a href="#">VIDEO</a>
+      <a href="https://www.kapanlagi.com/">HOME</a><a href="celebrity-profile.html">ARTIS</a><a href="https://www.kapanlagi.com/showbiz/film/">FILM</a><a href="https://musik.kapanlagi.com/">MUSIK</a><a href="https://www.kapanlagi.com/dangdut/">DANGDUT</a><a class="active" href="https://lirik.kapanlagi.com/">LIRIK</a><a href="https://www.kapanlagi.com/foto/">FOTO</a><a href="https://video.kapanlagi.com/">VIDEO</a>
     </nav>
   </div>
 </header>
@@ -169,34 +176,39 @@ a{color:inherit}
 <main class="page-wrap">
   <div class="switcher">
     <div>
-      <div class="switcher-label">KAPANLAGI LIRIK · MUSIC ENTITY MVP</div>
-      <div style="font-size:10px;color:#858994;margin-top:4px">Demo navigasi antara Artist Hub dan Song Leaf</div>
+      <div class="switcher-label">KAPANLAGI LIRIK · MUSIC ENTITY EXPERIENCE</div>
+      <div style="font-size:10px;color:#858994;margin-top:4px">Tiga halaman terhubung · navigasi contoh Denny Caknan</div>
     </div>
-    <div class="view-tabs" role="tablist" aria-label="Pilih halaman">
-      <button class="active" data-view="hub" role="tab" aria-selected="true">01 · Artist Hub</button>
-      <button data-view="song" role="tab" aria-selected="false">02 · Song Leaf</button>
-    </div>
+    <nav class="view-tabs" aria-label="Pilih halaman prototype">
+      <a class="active" href="index.html" aria-current="page">01 · Music Hub</a>
+      <a href="song-leaf.html">02 · Song Leaf</a>
+      <a href="celebrity-profile.html">03 · Celebrity Profile</a>
+    </nav>
   </div>
 
-  <section class="screen active" id="hub-screen" aria-label="Artist Hub">
+  <section class="screen active" id="hub-screen" aria-label="Music Hub">
     <div class="breadcrumb">Home <span>›</span> Lirik <span>›</span> <strong>Denny Caknan</strong></div>
     <div class="artist-hero">
       <div>
-        <img class="artist-photo" src="https://cdns.klimg.com/kapanlagi.com/s/denny_caknan/denny_caknan-rev1.jpg" alt="Foto Denny Caknan" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-        <div class="photo-fallback">DC</div>
+        <img class="artist-photo" src="https://cdns.klimg.com/kapanlagi.com/p/ddeeennnnnnyyyyz.jpg" alt="Foto Denny Caknan" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="photo-fallback" aria-hidden="true">DC</div>
       </div>
       <div>
-        <div class="eyebrow">ARTIST HUB · KAPANLAGI LIRIK</div>
-        <h1>Denny Caknan</h1>
-        <div class="artist-subtitle">Penyanyi &amp; pencipta lagu pop Jawa dan koplo<br>Ngawi, Indonesia</div>
-        <div class="hero-tags"><span class="hero-tag">Musisi</span><span class="hero-tag">Pop Jawa</span><span class="hero-tag">Dangdut / Koplo</span></div>
-        <div class="hero-actions"><button class="btn btn-red" data-go="song">Jelajahi lagu <span>→</span></button><a class="btn btn-ghost" href="https://www.kapanlagi.com/denny-caknan/profil/" target="_blank" rel="noopener">Profil artis ↗</a></div>
-        <div class="entity-note">Identitas artis menjadi penghubung katalog lagu dan konten KapanLagi.</div>
+        <div class="eyebrow">MUSIC HUB · KATALOG MUSIK ARTIS</div>
+        <h1>Lagu Denny Caknan</h1>
+        <div class="artist-subtitle">Denny Caknan · Penyanyi dan pencipta lagu pop Jawa dan koplo</div>
+        <div class="hero-tags"><span class="hero-tag">Pop Jawa</span><span class="hero-tag">Koplo</span><span class="hero-tag">Lagu &amp; Lirik</span><span class="hero-tag">Kolaborasi</span></div>
+        <div class="hero-actions"><a class="btn btn-red" href="#song-list">Jelajahi Lagu →</a><a class="btn btn-ghost" href="celebrity-profile.html">Profil Denny Caknan ↗</a></div>
+        <div class="entity-note">Temukan karya musik Denny Caknan tanpa mencampurkan katalog lagu dengan biodata dan berita kehidupan artis.</div>
       </div>
     </div>
 
-    <nav class="entity-nav" aria-label="Navigasi konten artis">
-      <button class="active">Lagu</button><button onclick="document.getElementById('related-content').scrollIntoView({behavior:'smooth'})">Berita</button><button onclick="document.getElementById('related-content').scrollIntoView({behavior:'smooth'})">Berita Foto</button><button onclick="document.getElementById('related-content').scrollIntoView({behavior:'smooth'})">Video</button><button onclick="window.open('https://www.kapanlagi.com/denny-caknan/profil/','_blank')">Profil ↗</button>
+    <nav class="entity-nav" aria-label="Navigasi Music Hub">
+      <a class="active" href="#song-list">Daftar Lagu</a>
+      <a href="#song-list">Kolaborasi</a>
+      <a href="#music-editorial">Berita Musik</a>
+      <a href="#music-info">Tentang Musiknya</a>
+      <a href="celebrity-profile.html">Profil Artis ↗</a>
     </nav>
 
     <div class="layout">
@@ -219,172 +231,96 @@ a{color:inherit}
             <div class="song-row" data-title="Tunggal Eka"><span class="song-number">09</span><div><div class="song-title">Tunggal Eka</div><div class="song-meta">Denny Caknan</div></div><button class="song-open" data-song="Tunggal Eka">Buka →</button></div>
             <div class="song-row" data-title="Sinarengan"><span class="song-number">10</span><div><div class="song-title">Sinarengan</div><div class="song-meta">Denny Caknan</div></div><button class="song-open" data-song="Sinarengan">Buka →</button></div>
           </div>
-          <div class="source-row">Daftar judul mengacu pada katalog yang tampil di <a href="https://lirik.kapanlagi.com/artis/denny-caknan/" target="_blank" rel="noopener">Artist Hub existing ↗</a>.</div>
+          <div class="source-row">Contoh judul berasal dari <a href="https://lirik.kapanlagi.com/artis/denny-caknan/" target="_blank" rel="noopener">katalog Lirik KapanLagi existing ↗</a>. Metadata album, rilisan dan ID lagu masih memerlukan validasi.</div>
         </section>
 
-        <section class="card section-card" id="related-content">
-          <div class="section-head"><div><h2 class="section-title">Konten terkait Denny Caknan</h2><div class="section-subtitle">Contoh aset editorial yang dapat dihubungkan dengan identitas artis.</div></div><span class="pill pill-red">Entity connection</span></div>
+        <section class="card section-card" id="music-editorial">
+          <div class="section-head"><div><h2 class="section-title">Berita Musik Denny Caknan</h2><div class="section-subtitle">Liputan karya, rilisan, penampilan, dan industri musik · konten pendukung katalog.</div></div><span class="pill pill-red">MUSIK</span></div>
           <div class="content-list">
             <div class="content-item">
-              <div class="content-thumb"><span>BERITA</span></div>
-              <div><span class="pill">BERITA</span><h4>Denny Caknan Berduka, Ayah Bella Bonita Meninggal Dunia karena Sakit</h4><a href="https://www.kapanlagi.com/dangdut/denny-caknan-berduka-ayah-bella-bonita-meninggal-dunia-karena-sakit-798cb2.html" target="_blank" rel="noopener">Buka berita existing ↗</a></div>
-            </div>
-            <div class="content-item">
-              <div class="content-thumb"><span>BERITA FOTO</span></div>
-              <div><span class="pill">BERITA FOTO</span><h4>Potret Denny Caknan dan Bella Bonita Liburan di Danau Toba</h4><a href="https://www.kapanlagi.com/dangdut/berita-foto/potret-denny-caknan-dan-bella-bonita-liburan-di-danau-toba-boncengan-main-jetski.html" target="_blank" rel="noopener">Buka galeri existing ↗</a></div>
+              <div class="content-thumb" style="background:linear-gradient(135deg,#342d46,#914a51)"><span>BERITA MUSIK</span></div>
+              <div><span class="pill">ALBUM &amp; RILISAN</span><h4>Album Live Denny Caknan Tembus 1 Juta Stream, Megah Music Siapkan Kejutan Baru</h4><a href="https://musik.kapanlagi.com/berita/album-live-denny-caknan-tembus-1-juta-stream-megah-music-siapkan-kejutan-baru-42bb66.html" target="_blank" rel="noopener">Baca liputan musik existing ↗</a></div>
             </div>
           </div>
-          <div class="callout" style="margin-top:14px"><strong>Usulan MVP:</strong> tampilkan konten hanya jika relasi artis sudah diverifikasi. Hindari pencocokan berdasarkan kemiripan nama saja.</div>
+          <div class="callout" style="margin-top:14px"><strong>Integrasi editorial:</strong> artikel dari musik.kapanlagi.com ditampilkan apabila artis terkait sudah terverifikasi. Music Hub tetap mengutamakan katalog lagu.</div>
         </section>
       </div>
 
       <aside class="stack">
-        <section class="card section-card">
-          <div class="section-head"><div><h2 class="section-title">Tentang Artis</h2><div class="section-subtitle">Ringkasan profil dari aset existing.</div></div></div>
+        <section class="card section-card" id="music-info">
+          <div class="section-head"><div><h2 class="section-title">Tentang Musik Denny Caknan</h2><div class="section-subtitle">Informasi musik singkat, bukan biodata lengkap.</div></div></div>
           <div class="profile-summary">
-            <img src="https://cdns.klimg.com/kapanlagi.com/s/denny_caknan/denny_caknan-rev1.jpg" alt="Denny Caknan" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <img src="https://cdns.klimg.com/kapanlagi.com/p/ddeeennnnnnyyyyz.jpg" alt="Denny Caknan" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
             <div class="fallback-small">DC</div>
-            <div><div class="profile-name">Denny Caknan</div><div class="profile-desc">Deni Setiawan · Penyanyi dan pencipta lagu pop Jawa / koplo.</div></div>
+            <div><div class="profile-name">Denny Caknan</div><div class="profile-desc">Penyanyi &amp; pencipta lagu dengan karya pop Jawa dan koplo.</div></div>
           </div>
           <div class="info-list">
-            <div class="info-item"><span>Asal</span><strong>Ngawi</strong></div>
-            <div class="info-item"><span>Jenis kelamin</span><strong>Laki-laki</strong></div>
-            <div class="info-item"><span>Jenis konten</span><strong>Musik &amp; editorial</strong></div>
+            <div class="info-item"><span>Aliran musik</span><strong>Pop Jawa / Koplo</strong></div>
+            <div class="info-item"><span>Bahasa lagu</span><strong>Utamanya Jawa</strong></div>
+            <div class="info-item"><span>Katalog</span><strong>Daftar lagu &amp; kolaborasi</strong></div>
           </div>
-          <div class="source-row"><a href="https://www.kapanlagi.com/denny-caknan/profil/" target="_blank" rel="noopener">Lihat profil existing ↗</a></div>
+          <div class="source-row"><a href="celebrity-profile.html">Baca Profil Denny Caknan ↗</a></div>
         </section>
         <section class="card section-card">
-          <h2 class="section-title">Identitas Music Entity</h2>
+          <h2 class="section-title">Jelajahi Karya Musik</h2>
           <div class="entity-box">
-            <div class="label">ARTIST ENTITY</div>
-            <div class="value">Denny Caknan</div>
-            <div class="hint">Artist ID menggunakan identifier existing yang akan diverifikasi bersama Tim IT.</div>
+            <div class="label">KATALOG LAGU ARTIS</div>
+            <div class="value">Temukan lirik dan karya Denny Caknan</div>
+            <div class="hint">Daftar lagu terhubung langsung ke halaman lirik detail; informasi selebritas tetap pada halaman profil.</div>
           </div>
           <div class="info-list">
-            <div class="info-item"><span>Artist Hub</span><strong class="pill pill-red">Pusat entitas</strong></div>
-            <div class="info-item"><span>Song Leaf</span><strong>Relasi lagu</strong></div>
-            <div class="info-item"><span>Editorial</span><strong>Relasi konten</strong></div>
+            <div class="info-item"><span>Music Hub</span><strong class="pill pill-red">Katalog lagu</strong></div>
+            <div class="info-item"><span>Song Leaf</span><strong>Detail satu lagu</strong></div>
+            <div class="info-item"><span>Profil Artis</span><strong><a href="celebrity-profile.html">Biodata &amp; berita →</a></strong></div>
           </div>
         </section>
-        <section class="callout"><strong>Prinsip:</strong> satu identitas artis menjadi penghubung katalog lagu dan aset editorial. Prototype ini tidak menetapkan ID atau struktur database baru.</section>
+        <section class="callout"><strong>Catatan data:</strong> informasi album, label, tanggal rilis dan ID artis belum dimasukkan karena memerlukan verifikasi internal. Modul profil selebritas dan berita kehidupan artis tersedia pada Celebrity Profile.</section>
       </aside>
     </div>
   </section>
 
-  <section class="screen" id="song-screen" aria-label="Song Leaf">
-    <div class="breadcrumb">Home <span>›</span> Lirik <span>›</span> <a href="#" data-go="hub">Denny Caknan</a> <span>›</span> <strong id="song-breadcrumb-title">Negoro Angin</strong></div>
-    <div class="layout">
-      <div class="stack">
-        <section class="card song-heading">
-          <span class="pill pill-red">SONG LEAF · LIRIK LAGU</span>
-          <h1 id="song-page-title">Lirik Negoro Angin</h1>
-          <div class="subtitle">Halaman lagu · KapanLagi Lirik</div>
-          <a href="#" class="artist-link" data-go="hub">
-            <img src="https://cdns.klimg.com/kapanlagi.com/s/denny_caknan/denny_caknan-rev1.jpg" alt="Foto Denny Caknan" onerror="this.style.display='none'">
-            <div><div class="name">Denny Caknan</div><div class="role">Artis · Buka Artist Hub untuk katalog lengkap</div></div>
-            <span class="arrow">→</span>
-          </a>
-          <div class="song-tabs"><button class="active" data-song-tab="lyrics">Lirik Lagu</button><button data-song-tab="meaning">Makna Lagu</button></div>
-          <div id="lyrics-panel" class="lyric-placeholder">
-            <div class="music-symbol">♫</div>
-            <strong>Konten lirik existing</strong>
-            <p>Area lirik tetap menggunakan konten dan struktur CMS yang sudah tersedia. Prototype ini hanya memperlihatkan penguatan identitas artis dan jalur navigasi ke Artist Hub.</p>
-          </div>
-          <div id="meaning-panel" class="hidden">
-            <div class="section-title" style="font-size:15px;margin-bottom:9px">Makna Lagu Negoro Angin</div>
-            <p class="meaning">Lagu ini menceritakan perjuangan cinta jarak jauh yang tidak berjalan sesuai harapan. Jarak membuat hubungan berubah, memunculkan rasa kecewa, dan menyisakan kenangan yang sulit dilepaskan.</p>
-            <div class="source-row">Ringkasan diparafrasekan dari bagian Makna Lagu di halaman existing.</div>
-          </div>
-          <div class="callout" style="margin-top:17px"><strong>Proposed Enhancement:</strong> nama artis menjadi tautan entity yang konsisten. Pengguna dapat kembali ke Artist Hub tanpa harus mencari ulang nama artis.</div>
-        </section>
-        <section class="card section-card">
-          <div class="section-head"><div><h2 class="section-title">Lagu lain dari Denny Caknan</h2><div class="section-subtitle">Navigasi antar-Song Leaf melalui relasi artis.</div></div><button class="song-open" data-go="hub">Semua lagu →</button></div>
-          <div class="song-sidebar-list">
-            <button data-song="Tepain Nyaman">Tepain Nyaman <span>→</span></button>
-            <button data-song="Madiun Ngawi (ft. Yeni Inka)">Madiun Ngawi (ft. Yeni Inka) <span>→</span></button>
-            <button data-song="Mblebes (ft. Yeni Inka)">Mblebes (ft. Yeni Inka) <span>→</span></button>
-            <button data-song="Laut Kidul (ft. Hendra Kumbara)">Laut Kidul (ft. Hendra Kumbara) <span>→</span></button>
-            <button data-song="Gak Pernah Cukup">Gak Pernah Cukup <span>→</span></button>
-          </div>
-        </section>
-      </div>
-      <aside class="stack">
-        <section class="card section-card">
-          <h2 class="section-title">Artist Entity</h2>
-          <div class="profile-summary" style="margin-top:14px">
-            <img src="https://cdns.klimg.com/kapanlagi.com/s/denny_caknan/denny_caknan-rev1.jpg" alt="Denny Caknan" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-            <div class="fallback-small">DC</div>
-            <div><div class="profile-name">Denny Caknan</div><div class="profile-desc">Penyanyi &amp; pencipta lagu</div></div>
-          </div>
-          <div class="entity-box">
-            <div class="label">TERHUBUNG KE ARTIST HUB</div>
-            <div class="value">Katalog lagu Denny Caknan</div>
-            <div class="hint">Satu pintu untuk menjelajahi lagu dan konten terkait artis.</div>
-            <button class="btn btn-red" style="width:100%;margin-top:12px" data-go="hub">Kembali ke Artist Hub →</button>
-          </div>
-        </section>
-        <section class="card section-card">
-          <div class="section-head"><div><h2 class="section-title">Berita Artis Terbaru</h2><div class="section-subtitle">Konten editorial yang sudah tampil pada Song Leaf existing.</div></div></div>
-          <div class="content-list">
-            <div class="content-item"><div class="content-thumb"><span>BERITA</span></div><div><h4>Bella Bonita Bagikan Momen JFC 2026, Tetap Tampil Walau Hujan</h4><span class="song-meta">27 Juli 2026</span></div></div>
-            <div class="content-item"><div class="content-thumb"><span>BERITA</span></div><div><h4>Bella Bonita Kenang Mendiang Ayah, Ungkap Kerinduan</h4><span class="song-meta">17 Juli 2026</span></div></div>
-            <div class="content-item"><div class="content-thumb"><span>BERITA</span></div><div><h4>Denny Caknan Berduka, Ayah Bella Bonita Meninggal Dunia</h4><span class="song-meta">11 Juli 2026</span></div></div>
-          </div>
-        </section>
-      </aside>
-    </div>
-    <div class="source-row">Referensi halaman lagu: <a href="https://lirik.kapanlagi.com/artis/denny-caknan/negoro-angin/" target="_blank" rel="noopener">Song Leaf existing ↗</a></div>
-  </section>
-
-  <div class="footer-note">Prototype konseptual untuk review Product, Management, dan Tim IT · Data identitas dan relasi aktual tetap perlu validasi CMS / Engineering.</div>
+  <div class="footer-note">Music Hub (katalog lagu artis) · Prototype untuk review Product, Management dan Tim IT · ID dan metadata musik masih memerlukan validasi CMS / Engineering.</div>
 </main>
 <script>
 (function(){
-  const tabs=[...document.querySelectorAll('[data-view]')];
-  const hub=document.getElementById('hub-screen');
-  const song=document.getElementById('song-screen');
-  function show(view){
-    const isHub=view==='hub';
-    hub.classList.toggle('active',isHub);
-    song.classList.toggle('active',!isHub);
-    tabs.forEach(t=>{
-      const active=t.dataset.view===view;
-      t.classList.toggle('active',active);
-      t.setAttribute('aria-selected',active?'true':'false');
-    });
-    window.scrollTo({top:0,behavior:'smooth'});
-  }
-  function openSong(title){
-    const name=title||'Negoro Angin';
-    document.getElementById('song-page-title').textContent='Lirik '+name;
-    document.getElementById('song-breadcrumb-title').textContent=name;
-    const isNegoro=name.toLowerCase()==='negoro angin';
-    document.getElementById('meaning-panel').classList.toggle('hidden',!isNegoro);
-    document.getElementById('lyrics-panel').classList.remove('hidden');
-    document.querySelectorAll('[data-song-tab]').forEach(b=>b.classList.toggle('active',b.dataset.songTab==='lyrics'));
-    show('song');
-  }
-  document.addEventListener('click',e=>{
-    const view=e.target.closest('[data-view]');
-    const go=e.target.closest('[data-go]');
-    const songBtn=e.target.closest('[data-song]');
-    const songTab=e.target.closest('[data-song-tab]');
-    if(view){show(view.dataset.view);return;}
-    if(go){e.preventDefault();show(go.dataset.go);return;}
-    if(songBtn){openSong(songBtn.dataset.song);return;}
-    if(songTab){
-      const meaning=songTab.dataset.songTab==='meaning';
-      document.getElementById('lyrics-panel').classList.toggle('hidden',meaning);
-      document.getElementById('meaning-panel').classList.toggle('hidden',!meaning);
-      document.querySelectorAll('[data-song-tab]').forEach(b=>b.classList.toggle('active',b===songTab));
+  const search=document.getElementById('song-search');
+  const rows=[...document.querySelectorAll('#song-list .song-row')];
+  const links={
+    'Tepain Nyaman':'song-leaf.html',
+    'Madiun Ngawi (ft. Yeni Inka)':'https://lirik.kapanlagi.com/artis/denny-caknan/',
+    'Mblebes (ft. Yeni Inka)':'https://lirik.kapanlagi.com/artis/denny-caknan/mblebes-ft-yeni-inka/',
+    'Laut Kidul (ft. Hendra Kumbara)':'https://lirik.kapanlagi.com/artis/denny-caknan/laut-kidul-ft-hendra-kumbara/',
+    'Gak Pernah Cukup':'https://lirik.kapanlagi.com/artis/denny-caknan/',
+    'Adoh':'https://lirik.kapanlagi.com/artis/denny-caknan/',
+    'Titenono':'https://lirik.kapanlagi.com/artis/denny-caknan/titenono/',
+    'Negoro Angin':'https://lirik.kapanlagi.com/artis/denny-caknan/negoro-angin/',
+    'Tunggal Eka':'https://lirik.kapanlagi.com/artis/denny-caknan/',
+    'Sinarengan':'https://lirik.kapanlagi.com/artis/denny-caknan/sinarengan/'
+  };
+  rows.forEach(row=>{
+    const button=row.querySelector('[data-song]');
+    if(button){
+      const title=button.getAttribute('data-song');
+      button.addEventListener('click',()=>{window.location.href=links[title]||'https://lirik.kapanlagi.com/artis/denny-caknan/';});
     }
   });
-  const search=document.getElementById('song-search');
-  search.addEventListener('input',()=>{
+  if(search)search.addEventListener('input',()=>{
     const q=search.value.trim().toLowerCase();
-    document.querySelectorAll('#song-list .song-row').forEach(row=>{
-      row.style.display=row.dataset.title.toLowerCase().includes(q)?'grid':'none';
+    let matches=0;
+    rows.forEach(row=>{
+      const shown=row.getAttribute('data-title').toLowerCase().includes(q);
+      row.style.display=shown?'grid':'none';
+      if(shown)matches++;
     });
+    let empty=document.getElementById('no-song-results');
+    if(!empty){
+      empty=document.createElement('p');
+      empty.id='no-song-results';
+      empty.style.cssText='display:none;padding:15px;color:#777;text-align:center;font-size:12px';
+      empty.textContent='Lagu tidak ditemukan dalam contoh katalog ini.';
+      document.getElementById('song-list').appendChild(empty);
+    }
+    empty.style.display=matches?'none':'block';
   });
 })();
 </script>

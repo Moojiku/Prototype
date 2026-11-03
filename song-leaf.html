@@ -197,9 +197,26 @@ h3{font-size:15px;margin:0 0 10px}
  .video-item .thumb{height:88px}
  .entity-person img{width:50px;height:50px}
 }
+.prototype-banner{background:#fff1f3;border-bottom:1px solid #f5d3d9;color:#83273b;font-size:11px}
+.prototype-banner .inner{max-width:1120px;margin:auto;padding:9px 16px;display:flex;align-items:center;justify-content:space-between;gap:13px;flex-wrap:wrap}
+.prototype-banner strong{font-weight:900}
+.prototype-pages{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.prototype-pages a{font-size:11px;color:#404149;border:1px solid #e5c8ce;border-radius:7px;padding:7px 11px;background:#fff;font-weight:700;white-space:nowrap}
+.prototype-pages a.active{background:#282b32;color:white;border-color:#282b32}
+@media(max-width:600px){.prototype-banner .inner{gap:9px}.prototype-banner .inner > span{font-size:10px}.prototype-pages a{font-size:9px;padding:7px 8px}}
 </style>
 </head>
 <body>
+<div class="prototype-banner">
+  <div class="inner">
+    <span><strong>MUSIC ENTITY PROTOTYPE</strong> · Halaman Song Leaf / Lirik Lagu · Bukan situs live</span>
+    <nav class="prototype-pages" aria-label="Jelajahi tiga halaman prototype">
+      <a href="index.html">01 · Music Hub</a>
+      <a class="active" href="song-leaf.html" aria-current="page">02 · Song Leaf</a>
+      <a href="celebrity-profile.html">03 · Celebrity Profile</a>
+    </nav>
+  </div>
+</div>
 <div class="site-top">
   <div class="inner">
     <div><a href="https://www.kapanlagi.com/">KapanLagi.com</a><a href="https://www.liputan6.com/">Liputan6.com</a><a href="https://www.bola.com/">Bola.com</a></div>
@@ -256,18 +273,18 @@ h3{font-size:15px;margin:0 0 10px}
         <div class="artist-byline">
           <span class="artist-name">Denny Caknan</span>
           <span class="entity-inline" aria-label="Halaman identitas artis">
-            <a href="https://lirik.kapanlagi.com/artis/denny-caknan/" target="_blank" rel="noopener" title="Lihat lagu lainnya dari Denny Caknan">Lagu Lainnya</a>
-            <a href="https://www.kapanlagi.com/denny-caknan/profil/" target="_blank" rel="noopener" title="Profil lengkap Denny Caknan di KapanLagi">Profil Artis</a>
+            <a href="index.html" title="Lihat katalog lagu Denny Caknan">Lagu Lainnya</a>
+            <a href="celebrity-profile.html" title="Baca biodata dan berita Denny Caknan">Profil Artis</a>
           </span>
         </div>
       </div>
 
       <nav class="artist-tabs" aria-label="Navigasi kategori konten Denny Caknan">
-    <a href="https://www.kapanlagi.com/denny-caknan/">SEMUA</a>
-    <a href="https://www.kapanlagi.com/denny-caknan/profil/">PROFIL</a>
-    <a href="https://www.kapanlagi.com/denny-caknan/berita/">BERITA</a>
+    <a href="celebrity-profile.html">SEMUA</a>
+    <a href="celebrity-profile.html#biografi">PROFIL</a>
+    <a href="celebrity-profile.html#berita">BERITA</a>
     <span class="disabled" aria-disabled="true" title="Menu FOTO belum memiliki halaman tujuan yang terhubung pada halaman existing">FOTO</span>
-    <a href="https://www.kapanlagi.com/denny-caknan/berita-foto/">BERITA FOTO</a>
+    <a href="celebrity-profile.html#foto">BERITA FOTO</a>
     <a href="https://video.kapanlagi.com/" title="Portal Video KapanLagi; halaman existing belum menyediakan tujuan khusus video Denny Caknan">VIDEO</a>
     <a href="#lirik" class="active" aria-current="page">LIRIK</a>
   </nav>
@@ -376,11 +393,11 @@ h3{font-size:15px;margin:0 0 10px}
           <div><strong>Denny Caknan</strong><small>Penyanyi dan pencipta lagu pop Jawa dan koplo · Ngawi</small></div>
         </div>
         <div class="entity-actions">
-          <a href="https://www.kapanlagi.com/denny-caknan/" target="_blank" rel="noopener">Profil Artis</a>
-          <a href="https://lirik.kapanlagi.com/artis/denny-caknan/" target="_blank" rel="noopener">Lagu Denny Caknan</a>
-          <a href="https://www.kapanlagi.com/denny-caknan/berita/" target="_blank" rel="noopener">Berita artis</a>
+          <a href="celebrity-profile.html">Profil Artis</a>
+          <a href="index.html">Lagu Denny Caknan</a>
+          <a href="celebrity-profile.html#berita">Berita artis</a>
         </div>
-        <div class="entity-status">Pengayaan Music Entity: relasi ke profil artis, berita, foto, berita foto, dan video dapat dikelola dari satu identitas artis terverifikasi. Halaman publik belum menampilkan Artist ID atau foreign key.</div>
+        <div class="entity-status">Lagu ini terhubung ke katalog musik artis dan profil selebritas yang berbeda, agar pembaca mudah melanjutkan pencarian sesuai kebutuhan.</div>
       </section>
     </article>
 
@@ -390,8 +407,8 @@ h3{font-size:15px;margin:0 0 10px}
         <div class="artist-card">
           <img src="https://cdns.klimg.com/kapanlagi.com/p/ddeeennnnnnyyyyz.jpg" alt="Foto profil Denny Caknan">
           <strong>Denny Caknan</strong>
-          <p>Laki-Laki · Ngawi<br>Deni Setiawan, dikenal sebagai Denny Caknan, merupakan penyanyi dan pencipta lagu pop Jawa dan koplo.</p>
-          <a class="profile-link" href="https://www.kapanlagi.com/denny-caknan/" target="_blank" rel="noopener">Selengkapnya di KapanLagi ↗</a>
+          <p>Penyanyi dan pencipta lagu pop Jawa dan koplo. Biografi dan berita pribadi tersedia pada halaman Profil Artis.</p>
+          <a class="profile-link" href="celebrity-profile.html">Profil Denny Caknan →</a>
         </div>
       </section>
       <section class="side-section">

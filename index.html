@@ -151,7 +151,7 @@ a{color:inherit}
 .view-tabs a.active{background:#fff;color:var(--red);box-shadow:0 1px 4px rgba(0,0,0,.08)}
 .entity-nav a{white-space:nowrap;background:#fff;border:1px solid var(--line);border-radius:7px;padding:10px 14px;font-size:11px;color:#626671;font-weight:700;text-decoration:none}
 .entity-nav a.active{background:#fff0f1;color:var(--red);border-color:#f3c9cc}
-#song-list{scroll-margin-top:18px}
+#song-list,#collaborations,#music-editorial,#music-info{scroll-margin-top:18px}
 @media(max-width:760px){.view-tabs{max-width:100%;overflow-x:auto}.view-tabs a{font-size:10px;padding:8px 9px}.artist-hero h1{font-size:23px}}
 </style>
 </head>
@@ -205,7 +205,7 @@ a{color:inherit}
 
     <nav class="entity-nav" aria-label="Navigasi Music Hub">
       <a class="active" href="#song-list">Daftar Lagu</a>
-      <a href="#song-list">Kolaborasi</a>
+      <a href="#collaborations">Kolaborasi</a>
       <a href="#music-editorial">Berita Musik</a>
       <a href="#music-info">Tentang Musiknya</a>
       <a href="celebrity-profile.html">Profil Artis ↗</a>
@@ -232,6 +232,19 @@ a{color:inherit}
             <div class="song-row" data-title="Sinarengan"><span class="song-number">10</span><div><div class="song-title">Sinarengan</div><div class="song-meta">Denny Caknan</div></div><button class="song-open" data-song="Sinarengan">Buka →</button></div>
           </div>
           <div class="source-row">Contoh judul berasal dari <a href="https://lirik.kapanlagi.com/artis/denny-caknan/" target="_blank" rel="noopener">katalog Lirik KapanLagi existing ↗</a>. Metadata album, rilisan dan ID lagu masih memerlukan validasi.</div>
+        </section>
+
+        <section class="card section-card" id="collaborations">
+          <div class="section-head">
+            <div><h2 class="section-title">Kolaborasi Musik</h2><div class="section-subtitle">Pilihan lagu Denny Caknan bersama musisi lain dari katalog existing.</div></div>
+            <span class="pill pill-red">KOLABORASI</span>
+          </div>
+          <div class="song-sidebar-list">
+            <a href="https://lirik.kapanlagi.com/artis/denny-caknan/madiun-ngawi-ft-yeni-inka/" target="_blank" rel="noopener" style="display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid #eee;text-decoration:none;font-size:12px;color:#343741">Madiun Ngawi — ft. Yeni Inka <strong style="color:#e21f2b">↗</strong></a>
+            <a href="https://lirik.kapanlagi.com/artis/denny-caknan/mblebes-ft-yeni-inka/" target="_blank" rel="noopener" style="display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid #eee;text-decoration:none;font-size:12px;color:#343741">Mblebes — ft. Yeni Inka <strong style="color:#e21f2b">↗</strong></a>
+            <a href="https://lirik.kapanlagi.com/artis/denny-caknan/laut-kidul-ft-hendra-kumbara/" target="_blank" rel="noopener" style="display:flex;justify-content:space-between;padding:12px 0;text-decoration:none;font-size:12px;color:#343741">Laut Kidul — ft. Hendra Kumbara <strong style="color:#e21f2b">↗</strong></a>
+          </div>
+          <div class="source-row">Kredit kolaborasi mengikuti penamaan pada halaman Lirik existing dan perlu validasi ke Artist ID terkait.</div>
         </section>
 
         <section class="card section-card" id="music-editorial">
@@ -287,14 +300,14 @@ a{color:inherit}
   const rows=[...document.querySelectorAll('#song-list .song-row')];
   const links={
     'Tepain Nyaman':'song-leaf.html',
-    'Madiun Ngawi (ft. Yeni Inka)':'https://lirik.kapanlagi.com/artis/denny-caknan/',
+    'Madiun Ngawi (ft. Yeni Inka)':'https://lirik.kapanlagi.com/artis/denny-caknan/madiun-ngawi-ft-yeni-inka/',
     'Mblebes (ft. Yeni Inka)':'https://lirik.kapanlagi.com/artis/denny-caknan/mblebes-ft-yeni-inka/',
     'Laut Kidul (ft. Hendra Kumbara)':'https://lirik.kapanlagi.com/artis/denny-caknan/laut-kidul-ft-hendra-kumbara/',
-    'Gak Pernah Cukup':'https://lirik.kapanlagi.com/artis/denny-caknan/',
-    'Adoh':'https://lirik.kapanlagi.com/artis/denny-caknan/',
+    'Gak Pernah Cukup':'https://lirik.kapanlagi.com/artis/denny-caknan/gak-pernah-cukup/',
+    'Adoh':'https://lirik.kapanlagi.com/artis/denny-caknan/adoh/',
     'Titenono':'https://lirik.kapanlagi.com/artis/denny-caknan/titenono/',
     'Negoro Angin':'https://lirik.kapanlagi.com/artis/denny-caknan/negoro-angin/',
-    'Tunggal Eka':'https://lirik.kapanlagi.com/artis/denny-caknan/',
+    'Tunggal Eka':'https://lirik.kapanlagi.com/artis/denny-caknan/tunggal-eka/',
     'Sinarengan':'https://lirik.kapanlagi.com/artis/denny-caknan/sinarengan/'
   };
   rows.forEach(row=>{
